@@ -4,15 +4,18 @@
   <meta charset="utf-8">
   
   
-  <title>Archiv | Aquarius-Baby</title>
+  <title>Aquarius-Baby</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="叨叨的小屋">
-<meta property="og:type" content="website">
+  <meta name="description" content="优化目标逻辑回归的损失函数：">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Aquarius-Baby">
-<meta property="og:url" content="https://aquarius-baby.github.io/archives/index.html">
+<meta property="og:url" content="https://aquarius-baby.github.io/2020/02/01/day8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/index.html">
 <meta property="og:site_name" content="Aquarius-Baby">
-<meta property="og:description" content="叨叨的小屋">
+<meta property="og:description" content="优化目标逻辑回归的损失函数：">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-02-01T08:15:08.000Z">
+<meta property="article:modified_time" content="2020-12-15T08:33:28.274Z">
+<meta property="article:tag" content="吴恩达视频笔记">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Aquarius-Baby" type="application/atom+xml">
@@ -74,204 +77,103 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/15/hello-world/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-12-15T11:52:28.569Z" itemprop="datePublished">Dec 15</time>
+        <section id="main"><article id="post-day8支持向量机" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/02/01/day8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" class="article-date">
+  <time class="dt-published" datetime="2020-02-01T08:15:08.000Z" itemprop="datePublished">2020-02-01</time>
 </a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/15/test/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-12-15T09:49:16.000Z" itemprop="datePublished">Dec 15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/15/test/">test</a>
-    </h1>
-  
 
-    </header>
   </div>
-</article>
-  
+  <div class="article-inner">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/12/15/help/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-12-15T08:33:28.275Z" itemprop="datePublished">Dec 15</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/15/help/">Hexo 使用说明~</a>
-    </h1>
-  
+        <h1 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h1><p>逻辑回归的损失函数：</p>
+<a id="more"></a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/10/number-sort-summary/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-10T15:42:04.000Z" itemprop="datePublished">Feb 10</time>
-</a>
+<p>$$ </p>
+<p>J(θ)=-\frac{1}{m}[\sum_{i=1}^{m} y^{(i)}log(h_θ(x^{(i)}))+(1-y^{(i)})log(1-h_θ(x^{(i)}))] \<br>+\frac{\lambda }{2m}\sum_{j=1}^{n}{\theta_j} ^2</p>
+<p>$$</p>
+<p>其中：<br>$$<br>h_θ(x^{(i)})=\frac{1}{1+e^{-\theta^T x^{(i)} }}<br>$$</p>
+<p>画出坐标图，可以知道<br>$$<br>-log(h_θ(x^{(i)}))<br>$$<br>随着x的增加，逐渐减少,收敛于0。</p>
+<p>所以，y_i=0时，h(x)&lt;&lt;-1，<br>$$<br>-log(1-h_θ(x^{(i)})) \approx 0<br>$$</p>
+<p>y_i=1时，h(x)&gt;&gt;1，<br>$$<br>-log(h_θ(x^{(i)})) \approx 0<br>$$</p>
+<p>得到新的损失函数为：</p>
+<p>$$<br> min = \frac{1}{2} \sum_{i=1}^{n} \theta_j ^2<br>$$<br>同时，约束函数为<br>$$<br>\theta^Tx^{(i)} &gt;&gt;1  ; ; if ;  y^{(i)} = 1 </p>
+<p>\theta^Tx^{(i)} &lt;&lt; - 1  ; ; if ;  y^{(i)} = 0<br>$$</p>
+<h1 id="大间隔"><a href="#大间隔" class="headerlink" title="大间隔"></a>大间隔</h1><p>总结： </p>
+<ol>
+<li>SVM 要找到最中间的边界。 </li>
+<li>所以要找到最长的映射p。 </li>
+<li>进而可以找到所求参数θ的最小值。</li>
+</ol>
+<h1 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h1><p>我们设置f函数，衡量标记点和原先样本点的相似性</p>
+<p>$$<br>    f_i = exp( -\frac{||x^{(i)}-l^{(i)}||^2}{2 \sigma ^2 })<br>$$<br>exp中的函数是高斯函数</p>
+<p>在这种情况下，f的取值为：<br>x接近l时,f接近1。<br>x远离l时,f接近0。</p>
+<p>δ越大，收敛越慢<br>δ越小，收敛越快</p>
+<p>总结：<br>1.C </p>
+<ul>
+<li>大C:低偏差，高方差（对应低λ，overfitting）因为C约等于λ的倒数。 </li>
+<li>小C:高偏差，低方差（对应高λ） </li>
+</ul>
+<ol start="2">
+<li>δ </li>
+</ol>
+<ul>
+<li>大δ2：fi分布更平滑，高偏差，低方差 </li>
+<li>小δ2：fi分布更集中，低偏差，高方差 （overfitting）</li>
+</ul>
+<h5 id="svm的使用"><a href="#svm的使用" class="headerlink" title="svm的使用"></a>svm的使用</h5><ol>
+<li>特征维度n很大：<br>使用逻辑回归和线性SVM. </li>
+<li>特征维度n小，样本数量m中等：<br>使用高斯核SVM。 </li>
+<li>特征维度n小，且样本数量m巨大： </li>
+</ol>
+<ul>
+<li>可以创建新的特征 </li>
+<li>然后使用逻辑回归和无核SVM</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012052268/article/details/78816779">https://blog.csdn.net/u012052268/article/details/78816779</a></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/10/number-sort-summary/">8大基本排序算法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/10/listnode-summary/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-10T07:44:53.000Z" itemprop="datePublished">Feb 10</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://aquarius-baby.github.io/2020/02/01/day8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/" data-id="ckipyjq6y001w9eof8bsdd2ky" data-title="" class="article-share-link">Teilen</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/10/listnode-summary/">链表题解</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/10/tree-summary/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-10T07:18:03.000Z" itemprop="datePublished">Feb 10</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/10/tree-summary/">二叉树题解</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/02/leetcode206/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-02T12:54:52.000Z" itemprop="datePublished">Feb 2</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/leetcode206/">leetcode206反转链表</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/" rel="tag">吴恩达视频笔记</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/02/hexo%E4%BD%BF%E7%94%A8%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-01T16:23:40.000Z" itemprop="datePublished">Feb 2</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/hexo%E4%BD%BF%E7%94%A8%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F/">hexo使用渲染公式</a>
-    </h1>
+    <a href="/2020/02/01/day9%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
+  
+    <a href="/2020/02/01/day7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/01/day10%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E6%B3%95/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-01T08:15:10.000Z" itemprop="datePublished">Feb 1</time>
-</a>
-      
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/01/day9%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  <time class="dt-published" datetime="2020-02-01T08:15:09.000Z" itemprop="datePublished">Feb 1</time>
-</a>
-      
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">weiter &raquo;</a>
-  </nav>
 
 </section>
         

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Aquarius-Baby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="训练集、测试集在预测过程中发现存在很大的错误，我们会考虑使用以下的方法来解决  获取更多的训练样本 减少训练的特征 增加训练的特征 尝试多项式特征 增加或减少λ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aquarius-Baby">
+<meta property="og:url" content="https://aquarius-baby.github.io/2020/02/01/day6%E5%BA%94%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BB%BA%E8%AE%AE/index.html">
+<meta property="og:site_name" content="Aquarius-Baby">
+<meta property="og:description" content="训练集、测试集在预测过程中发现存在很大的错误，我们会考虑使用以下的方法来解决  获取更多的训练样本 减少训练的特征 增加训练的特征 尝试多项式特征 增加或减少λ">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-02-01T08:15:06.000Z">
+<meta property="article:modified_time" content="2020-12-15T08:33:28.274Z">
+<meta property="article:tag" content="吴恩达视频笔记">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Aquarius-Baby" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Aquarius-Baby</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">不如意事常八九 可与语人无二三</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://aquarius-baby.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-day6应用机器学习的建议" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/02/01/day6%E5%BA%94%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BB%BA%E8%AE%AE/" class="article-date">
+  <time class="dt-published" datetime="2020-02-01T08:15:06.000Z" itemprop="datePublished">2020-02-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="训练集、测试集"><a href="#训练集、测试集" class="headerlink" title="训练集、测试集"></a>训练集、测试集</h4><p>在预测过程中发现存在很大的错误，我们会考虑使用以下的方法来解决</p>
+<ol>
+<li>获取更多的训练样本</li>
+<li>减少训练的特征</li>
+<li>增加训练的特征</li>
+<li>尝试多项式特征</li>
+<li>增加或减少λ</li>
+</ol>
+<a id="more"></a>
+
+
+<p>一个假设可能对训练样本的误差较小，但其实际上仍然不准确(因为过度拟合)。<br>因此，为了评估假设，我们将给定训练样本数据集分成两组：训练集和测试集。 通常，训练集(training set)包含70％的数据，测试集(test set)包含剩余的30％。<br>使用如下：</p>
+<p>$$<br>1.; learn ; \Theta ; and ; minimize ; J_{test}(\Theta) ; using ; the ; training ; set </p>
+<p>2.;compute ; the;  test ; set ; error ; J_{test}(\Theta)</p>
+<p>$$</p>
+<p>测试集的误差<br>对于线性回归：<br>$$<br> J_{test}(\Theta)=\frac{1}{2m_{test}} \quad \sum_{i=1}^{m_{test}}{(h_\Theta(x_{test}^{(i)})-y_{test}^{(i)})^2}<br>$$</p>
+<p>对于分类-误分类错误（又名0/1错误分类错误）<br>$$<br>err(h_\Theta(x),y) = \frac{1}{0}   ; if ; h_\Theta(x) &gt; 0.5 ; and ; y = 0  ; or ;  h_\Theta(x) &lt; 0.5 ; and ; y = 1</p>
+<p>$$<br>测试集的平均测试错误为：<br>$$<br>Test ; error =\frac{1}{m_{test}}  err(h_\Theta(x_{test}^{(i)}),y_{test}^{(i)})<br>$$<br> 这为我们提供了错误分类的测试数据的比例。</p>
+<h4 id="训练集，交叉验证集，测试集"><a href="#训练集，交叉验证集，测试集" class="headerlink" title="训练集，交叉验证集，测试集"></a>训练集，交叉验证集，测试集</h4><p>学习算法很好地适合训练集，并不意味着它是一个很好的假设。 它可能过度适应，因此对测试集的预测效果会很差。 训练参数的数据集上测量的误差将低于任何其他数据集的误差。</p>
+<p>鉴于许多具有不同多项式度的模型，我们可以使用系统方法来识别“最佳”函数。 为了选择假设的模型，可以测试每个多项式的次数并查看错误结果。</p>
+<p>将数据集分解为三组的一种方法是：</p>
+<ul>
+<li>训练集：60%</li>
+<li>交叉验证集：20%</li>
+<li>测试集：20%</li>
+</ul>
+<p>我们现在可以使用以下方法对三个不同的集合计算三个的错误值：</p>
+<ul>
+<li>使用训练集，对每个多项式，优化Θ的参数。</li>
+<li>使用交叉验证集，找到具有最小误差的多项式。</li>
+<li>使用测试集，来估计具有较低误差的多项式误差。</li>
+</ul>
+<h4 id="偏差-vs-方差"><a href="#偏差-vs-方差" class="headerlink" title="偏差 vs. 方差"></a>偏差 vs. 方差</h4><p>多项式次数与欠拟合和过拟合之间的关系。<br><br/><br>高偏差是欠拟合的，高方差是过拟合。<br><br/><br>随着我们增加多项式的次数d，训练误差将趋于减小。<br><br/><br>同时，随着我们将d增加到某一个点，交叉验证误差将趋于减少。<br/><br>然后随着d的增加它会增加，形成一个凸曲线。<br><br/></p>
+<p>总结：</p>
+<ul>
+<li>高偏差：训练误差，交叉验证误差都很大，且 交叉误差 约等于 训练误差 </li>
+<li>高方差：训练误差会变小，而交叉误差会很大，且 交叉误差 &gt; 训练误差 </li>
+</ul>
+<h4 id="正则化与偏差、方差"><a href="#正则化与偏差、方差" class="headerlink" title="正则化与偏差、方差"></a>正则化与偏差、方差</h4><p>正则化参数很大，趋近于欠拟合  <br/><br>正则化参数接近0，趋近于欠拟合</p>
+<ol>
+<li>创建一个参数集合，λ∈{0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24}</li>
+<li>创建一组具有不同次数的多项式或任何其他变体的模型。</li>
+<li>遍历参数集合，对每一个参数，每一个模型都进行学习并获得一些𝚯。</li>
+<li>在不使用正则参数的情况下，用学习获得的𝚯计算交叉验证的误差</li>
+<li>选择在交叉验证集上产生最小误差的最佳组合。</li>
+<li>使用最佳组合Θ和λ，将其应用于问题的解决𝐉。</li>
+</ol>
+<h4 id="下一步需要做什么"><a href="#下一步需要做什么" class="headerlink" title="下一步需要做什么"></a>下一步需要做什么</h4><h5 id="我们的决策过程可细分如下："><a href="#我们的决策过程可细分如下：" class="headerlink" title="我们的决策过程可细分如下："></a>我们的决策过程可细分如下：</h5><ol>
+<li>获得更多训练样本：修复高方差</li>
+<li>尝试使用较少的特征：修复高方差</li>
+<li>增加特征：修复高偏差</li>
+<li>添加多项式特征：修复高偏差</li>
+<li>减少λ：修复高偏差</li>
+<li>增加λ：修正高方差</li>
+</ol>
+<h5 id="诊断神经网络"><a href="#诊断神经网络" class="headerlink" title="诊断神经网络"></a>诊断神经网络</h5><ol>
+<li>参数较少的神经网络容易出现欠拟合。它的计算成本也更低。</li>
+<li>具有更多参数的大型神经网络容易过度拟合。它的计算成本也很高。<br>在这种情况下，可以使用正则化（增加λ）来解决过度拟合问题。</li>
+</ol>
+<p>使用单个隐藏层是一个很好的启动默认值。<br>可以使用交叉验证集在多个隐藏层上训练您的神经网络。<br>然后，可以选择性能最佳的那个。</p>
+<h5 id="模型复杂性效应"><a href="#模型复杂性效应" class="headerlink" title="模型复杂性效应"></a>模型复杂性效应</h5><ol>
+<li>低阶多项式（lowmodelcomplexity）具有高偏差和低方差。在这种情况下，模型的拟合非常一致。</li>
+<li>高阶多项式（高模型复杂度）非常适合训练数据，测试数据非常差。这些对训练数据的偏差很小，但方差很大。</li>
+<li>实际上，我们希望在两者之间选择一个模型，它可以很好地推广，但也可以很好地拟合数据。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://aquarius-baby.github.io/2020/02/01/day6%E5%BA%94%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BB%BA%E8%AE%AE/" data-id="ckipyjq6v001o9eofhbg5c36c" data-title="" class="article-share-link">Teilen</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/" rel="tag">吴恩达视频笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/01/day7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/01/day5-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/react/">react</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/summary/">summary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react%E7%AC%94%E8%AE%B0/" rel="tag">react笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" rel="tag">使用说明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/" rel="tag">吴恩达视频笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/react%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">react笔记</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" style="font-size: 13.33px;">使用说明</a> <a href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/" style="font-size: 16.67px;">吴恩达视频笔记</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13.33px;">链表</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/12/15/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/15/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/15/help/">Hexo 使用说明~</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/10/number-sort-summary/">8大基本排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/10/listnode-summary/">链表题解</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2020 Aquarius-Baby<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
