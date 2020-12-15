@@ -3,17 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Aquarius-Baby
+subtitle: '不如意事常八九 可与语人无二三'
+description: '叨叨的小屋'
 keywords:
-author: John Doe
-language: en
+author:
+language: chinese
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+#url: http://example.com
+#root: /
+url: https://aquarius-baby.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
