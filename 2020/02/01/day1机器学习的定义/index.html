@@ -1,196 +1,97 @@
 <!DOCTYPE html>
-<html>
+
+
+<html lang="zh-CN">
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="叨叨的小屋" />
   
-  <title>Aquarius-Baby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     Aquarius-Baby
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
 
-  <!-- keywords -->
   
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="机器学习的定义Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Aquarius-Baby">
-<meta property="og:url" content="https://aquarius-baby.github.io/2020/02/01/day1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89/index.html">
-<meta property="og:site_name" content="Aquarius-Baby">
-<meta property="og:description" content="机器学习的定义Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-01T08:15:01.000Z">
-<meta property="article:modified_time" content="2020-12-15T08:33:28.272Z">
-<meta property="article:tag" content="吴恩达视频笔记">
-<meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Aquarius-Baby" type="application/atom+xml">
+<link rel="stylesheet" href="/css/custom.css">
+
   
   
-    <link rel="icon" href="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
   
   
 
   
-<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
 
-  
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
 
+</html>
 
-  
-<meta name="generator" content="Hexo 5.2.0"></head>
 <body>
-  <div id="container">
-    <div id="particles-js"></div>
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/"></a></h1>
-		</hgroup>
-
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>标签</li>
-						
-						<li>友情链接</li>
-						
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-							<li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/note/" style="font-size: 10px;">note</a> <a href="/tags/react%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">react笔记</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 10px;">二叉树</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" style="font-size: 13.33px;">使用说明</a> <a href="/tags/note/" style="font-size: 16.67px;">吴恩达视频笔记</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13.33px;">链表</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/smackgg/hexo-theme-smackdown">smackdown</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-			</div>
-		</div>
-	</header>				
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				<img lazy-src="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" class="js-avatar">
-			</div>
-			<hgroup>
-			  <h1 class="header-author"></h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-      <div class="body-wrap"><article id="post-day1机器学习的定义" class="article article-type-post" itemscope itemprop="blogPost">
-  
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-day1机器学习的定义"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
     <div class="article-meta">
       <a href="/2020/02/01/day1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89/" class="article-date">
-  	<time datetime="2020-02-01T08:15:01.000Z" itemprop="datePublished">2020-02-01</time>
-</a>
-    </div>
+  <time datetime="2020-02-01T08:15:01.000Z" itemprop="datePublished">2020-02-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
       
-        <h1 id="机器学习的定义"><a href="#机器学习的定义" class="headerlink" title="机器学习的定义"></a>机器学习的定义</h1><p>Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。</p>
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="机器学习的定义"><a href="#机器学习的定义" class="headerlink" title="机器学习的定义"></a>机器学习的定义</h1><p>Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。</p>
 <a id="more"></a>
 
 <h1 id="一-监督学习"><a href="#一-监督学习" class="headerlink" title="一.监督学习"></a>一.监督学习</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h2><p>每一组用于学习的数据都有对应的输出值（正确的值）。</br><br>输出值可以是连续的值，也可以是离散的值。</br><br>根据输出值的不同，监督学习分为回归问题和分类问题。</p>
@@ -205,116 +106,420 @@
 <h2 id="无监督学习之dbscan笔记"><a href="#无监督学习之dbscan笔记" class="headerlink" title="无监督学习之dbscan笔记"></a>无监督学习之dbscan笔记</h2><h3 id="算法原理："><a href="#算法原理：" class="headerlink" title="算法原理："></a>算法原理：</h3><p>（1）DBSCAN通过检查数据集中每点的Eps邻域来搜索簇，如果点p的Eps邻域包含的点多于MinPts个，则创建一个以p为核心对象的簇；</p>
 <p>（2）然后，DBSCAN迭代地聚集从这些核心对象直接密度可达的对象，这个过程可能涉及一些密度可达簇的合并；</p>
 <p>（3）当没有新的点添加到任何簇时，该过程结束。</p>
-<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">输入：数据集D，给定点在邻域内成为核心对象的最小邻域点数：MinPts,邻域半径：Eps   </span><br><span class="line">输出：簇集合</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>) 首先将数据集D中的所有对象标记为未处理状态</span><br><span class="line">(<span class="number">2</span>) <span class="keyword">for</span>（数据集D中每个对象p） do</span><br><span class="line">(<span class="number">3</span>)    <span class="keyword">if</span> （p已经归入某个簇或标记为噪声） then</span><br><span class="line">(<span class="number">4</span>)         <span class="keyword">continue</span>;</span><br><span class="line">(<span class="number">5</span>)    <span class="keyword">else</span></span><br><span class="line">(<span class="number">6</span>)         检查对象p的Eps邻域 NEps(p) ；</span><br><span class="line">(<span class="number">7</span>)         <span class="keyword">if</span> (NEps(p)包含的对象数小于MinPts) then</span><br><span class="line">(<span class="number">8</span>)                  标记对象p为边界点或噪声点；</span><br><span class="line">(<span class="number">9</span>)         <span class="keyword">else</span></span><br><span class="line">(<span class="number">10</span>)                 标记对象p为核心点，并建立新簇C, 并将p邻域内所有点加入C</span><br><span class="line">(<span class="number">11</span>)                 <span class="keyword">for</span> (NEps(p)中所有尚未被处理的对象q)  do</span><br><span class="line">(<span class="number">12</span>)                       检查其Eps邻域NEps(q)，若NEps(q)包含至少MinPts个对象，则将NEps(q)中未归入任何一个簇的对象加入C；</span><br><span class="line">(<span class="number">13</span>)                 end <span class="keyword">for</span></span><br><span class="line">(<span class="number">14</span>)        end <span class="keyword">if</span></span><br><span class="line">(<span class="number">15</span>)    end <span class="keyword">if</span></span><br><span class="line">(<span class="number">16</span>) end <span class="keyword">for</span></span><br></pre></td></tr></table></figure>
+<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">输入：数据集D，给定点在邻域内成为核心对象的最小邻域点数：MinPts,邻域半径：Eps   </span><br><span class="line">输出：簇集合</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>) 首先将数据集D中的所有对象标记为未处理状态</span><br><span class="line">(<span class="number">2</span>) <span class="keyword">for</span>（数据集D中每个对象p） do</span><br><span class="line">(<span class="number">3</span>)    <span class="keyword">if</span> （p已经归入某个簇或标记为噪声） then</span><br><span class="line">(<span class="number">4</span>)         <span class="keyword">continue</span>;</span><br><span class="line">(<span class="number">5</span>)    <span class="keyword">else</span></span><br><span class="line">(<span class="number">6</span>)         检查对象p的Eps邻域 NEps(p) ；</span><br><span class="line">(<span class="number">7</span>)         <span class="keyword">if</span> (NEps(p)包含的对象数小于MinPts) then</span><br><span class="line">(<span class="number">8</span>)                  标记对象p为边界点或噪声点；</span><br><span class="line">(<span class="number">9</span>)         <span class="keyword">else</span></span><br><span class="line">(<span class="number">10</span>)                 标记对象p为核心点，并建立新簇C, 并将p邻域内所有点加入C</span><br><span class="line">(<span class="number">11</span>)                 <span class="keyword">for</span> (NEps(p)中所有尚未被处理的对象q)  do</span><br><span class="line">(<span class="number">12</span>)                       检查其Eps邻域NEps(q)，若NEps(q)包含至少MinPts个对象，则将NEps(q)中未归入任何一个簇的对象加入C；</span><br><span class="line">(<span class="number">13</span>)                 end <span class="keyword">for</span></span><br><span class="line">(<span class="number">14</span>)        end <span class="keyword">if</span></span><br><span class="line">(<span class="number">15</span>)    end <span class="keyword">if</span></span><br><span class="line">(<span class="number">16</span>) end <span class="keyword">for</span></span><br></pre></td></tr></table></figure>
 <h3 id="实际实现代码"><a href="#实际实现代码" class="headerlink" title="实际实现代码"></a>实际实现代码</h3><p>数据下载:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17-55Q3p1dWwtX71jamxBuQ">788points.txt</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import math</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">UNCLASSIFIED &#x3D; False</span><br><span class="line">NOISE &#x3D; 0</span><br><span class="line"></span><br><span class="line">def loadDataSet(fileName, splitChar&#x3D;&#39;\t&#39;):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：文件名</span><br><span class="line">    输出：数据集</span><br><span class="line">    描述：从文件读入数据集</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    dataSet &#x3D; []</span><br><span class="line">    with open(fileName) as fr:</span><br><span class="line">        for line in fr.readlines():</span><br><span class="line">            curline &#x3D; line.strip().split(splitChar)</span><br><span class="line">            fltline &#x3D; list(map(float, curline))</span><br><span class="line">            dataSet.append(fltline)</span><br><span class="line">    return dataSet</span><br><span class="line"></span><br><span class="line">def dist(a, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：向量A, 向量B</span><br><span class="line">    输出：两个向量的欧式距离</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return math.sqrt(np.power(a - b, 2).sum())</span><br><span class="line"></span><br><span class="line">def eps_neighbor(a, b, eps):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：向量A, 向量B</span><br><span class="line">    输出：是否在eps范围内</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return dist(a, b) &lt; eps</span><br><span class="line"></span><br><span class="line">def region_query(data, pointId, eps):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 查询点id, 半径大小</span><br><span class="line">    输出：在eps范围内的点的id</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    nPoints &#x3D; data.shape[1]</span><br><span class="line">    seeds &#x3D; []</span><br><span class="line">    for i in range(nPoints):</span><br><span class="line">        if eps_neighbor(data[:, pointId], data[:, i], eps):</span><br><span class="line">            seeds.append(i)</span><br><span class="line">    return seeds</span><br><span class="line"></span><br><span class="line">def expand_cluster(data, clusterResult, pointId, clusterId, eps, minPts):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 分类结果, 待分类点id, 簇id, 半径大小, 最小点个数</span><br><span class="line">    输出：能否成功分类</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    seeds &#x3D; region_query(data, pointId, eps)  # 查找 pointId 半径内符合要求的点</span><br><span class="line">    if len(seeds) &lt; minPts:  # 个数过少，不满足minPts条件，设置为噪声点</span><br><span class="line">        clusterResult[pointId] &#x3D; NOISE</span><br><span class="line">        return False</span><br><span class="line">    else:</span><br><span class="line">        clusterResult[pointId] &#x3D; clusterId  # 将pointId和半径内的点划分到该簇</span><br><span class="line">        for seedId in seeds:</span><br><span class="line">            clusterResult[seedId] &#x3D; clusterId</span><br><span class="line"></span><br><span class="line">        while len(seeds) &gt; 0:  # 遍历seeds中的点，以每一个点为中心，扩大范围</span><br><span class="line">            currentPoint &#x3D; seeds[0]</span><br><span class="line">            queryResults &#x3D; region_query(data, currentPoint, eps)</span><br><span class="line">            if len(queryResults) &gt;&#x3D; minPts:</span><br><span class="line">                for i in range(len(queryResults)):</span><br><span class="line">                    resultPoint &#x3D; queryResults[i]</span><br><span class="line">                    if clusterResult[resultPoint] &#x3D;&#x3D; UNCLASSIFIED:</span><br><span class="line">                        seeds.append(resultPoint)   # 该点没有被分类过，加到该簇中</span><br><span class="line">                        clusterResult[resultPoint] &#x3D; clusterId</span><br><span class="line">                    elif clusterResult[resultPoint] &#x3D;&#x3D; NOISE:   # 曾被设置为噪声的点</span><br><span class="line">                        clusterResult[resultPoint] &#x3D; clusterId</span><br><span class="line">            seeds &#x3D; seeds[1:]   # 约等于移除第一个数，实现遍历操作</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">def dbscan(data, eps, minPts):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 半径大小, 最小点个数</span><br><span class="line">    输出：分类簇id</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    clusterId &#x3D; 1</span><br><span class="line">    nPoints &#x3D; data.shape[1]  # 数据个数</span><br><span class="line">    clusterResult &#x3D; [UNCLASSIFIED] * nPoints  # 初始状态全部设置为未处理</span><br><span class="line">    for pointId in range(nPoints):</span><br><span class="line">        point &#x3D; data[:, pointId]</span><br><span class="line">        if clusterResult[pointId] &#x3D;&#x3D; UNCLASSIFIED:  # 存在没有被处理过的点</span><br><span class="line">            if expand_cluster(data, clusterResult, pointId, clusterId, eps, minPts):   # 成功分类，增加一个簇,继续对未处理的点进行分类</span><br><span class="line">                clusterId &#x3D; clusterId + 1</span><br><span class="line">    return clusterResult, clusterId - 1</span><br><span class="line"></span><br><span class="line">def plotFeature(data, clusters, clusterNum):</span><br><span class="line">    nPoints &#x3D; data.shape[1]</span><br><span class="line">    matClusters &#x3D; np.mat(clusters).transpose()</span><br><span class="line">    fig &#x3D; plt.figure()</span><br><span class="line">    scatterColors &#x3D; [&#39;black&#39;, &#39;blue&#39;, &#39;green&#39;, &#39;yellow&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;orange&#39;, &#39;brown&#39;]</span><br><span class="line">    ax &#x3D; fig.add_subplot(111)</span><br><span class="line">    for i in range(clusterNum + 1):</span><br><span class="line">        colorSytle &#x3D; scatterColors[i % len(scatterColors)]</span><br><span class="line">        subCluster &#x3D; data[:, np.nonzero(matClusters[:, 0].A &#x3D;&#x3D; i)]</span><br><span class="line">        ax.scatter(subCluster[0, :].flatten().A[0], subCluster[1, :].flatten().A[0], c&#x3D;colorSytle, s&#x3D;50)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    dataSet &#x3D; loadDataSet(&#39;788points.txt&#39;, splitChar&#x3D;&#39;,&#39;)</span><br><span class="line">    dataSet &#x3D; np.mat(dataSet).transpose()</span><br><span class="line">    # print(dataSet)</span><br><span class="line">    clusters, clusterNum &#x3D; dbscan(dataSet, 2, 15)  # 半径为2 最少点个数15</span><br><span class="line">    print(&quot;cluster Numbers &#x3D; &quot;, clusterNum)</span><br><span class="line">    # print(clusters)</span><br><span class="line">    plotFeature(dataSet, clusters, clusterNum)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    print(&#39;start! please wait...&#39;)</span><br><span class="line">    start &#x3D; time.clock()</span><br><span class="line">    main()</span><br><span class="line">    end &#x3D; time.clock()</span><br><span class="line">    print(&#39;finish all in %s&#39; % str(end - start))</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import math</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">UNCLASSIFIED &#x3D; False</span><br><span class="line">NOISE &#x3D; 0</span><br><span class="line"></span><br><span class="line">def loadDataSet(fileName, splitChar&#x3D;&#39;\t&#39;):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：文件名</span><br><span class="line">    输出：数据集</span><br><span class="line">    描述：从文件读入数据集</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    dataSet &#x3D; []</span><br><span class="line">    with open(fileName) as fr:</span><br><span class="line">        for line in fr.readlines():</span><br><span class="line">            curline &#x3D; line.strip().split(splitChar)</span><br><span class="line">            fltline &#x3D; list(map(float, curline))</span><br><span class="line">            dataSet.append(fltline)</span><br><span class="line">    return dataSet</span><br><span class="line"></span><br><span class="line">def dist(a, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：向量A, 向量B</span><br><span class="line">    输出：两个向量的欧式距离</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return math.sqrt(np.power(a - b, 2).sum())</span><br><span class="line"></span><br><span class="line">def eps_neighbor(a, b, eps):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：向量A, 向量B</span><br><span class="line">    输出：是否在eps范围内</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return dist(a, b) &lt; eps</span><br><span class="line"></span><br><span class="line">def region_query(data, pointId, eps):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 查询点id, 半径大小</span><br><span class="line">    输出：在eps范围内的点的id</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    nPoints &#x3D; data.shape[1]</span><br><span class="line">    seeds &#x3D; []</span><br><span class="line">    for i in range(nPoints):</span><br><span class="line">        if eps_neighbor(data[:, pointId], data[:, i], eps):</span><br><span class="line">            seeds.append(i)</span><br><span class="line">    return seeds</span><br><span class="line"></span><br><span class="line">def expand_cluster(data, clusterResult, pointId, clusterId, eps, minPts):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 分类结果, 待分类点id, 簇id, 半径大小, 最小点个数</span><br><span class="line">    输出：能否成功分类</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    seeds &#x3D; region_query(data, pointId, eps)  # 查找 pointId 半径内符合要求的点</span><br><span class="line">    if len(seeds) &lt; minPts:  # 个数过少，不满足minPts条件，设置为噪声点</span><br><span class="line">        clusterResult[pointId] &#x3D; NOISE</span><br><span class="line">        return False</span><br><span class="line">    else:</span><br><span class="line">        clusterResult[pointId] &#x3D; clusterId  # 将pointId和半径内的点划分到该簇</span><br><span class="line">        for seedId in seeds:</span><br><span class="line">            clusterResult[seedId] &#x3D; clusterId</span><br><span class="line"></span><br><span class="line">        while len(seeds) &gt; 0:  # 遍历seeds中的点，以每一个点为中心，扩大范围</span><br><span class="line">            currentPoint &#x3D; seeds[0]</span><br><span class="line">            queryResults &#x3D; region_query(data, currentPoint, eps)</span><br><span class="line">            if len(queryResults) &gt;&#x3D; minPts:</span><br><span class="line">                for i in range(len(queryResults)):</span><br><span class="line">                    resultPoint &#x3D; queryResults[i]</span><br><span class="line">                    if clusterResult[resultPoint] &#x3D;&#x3D; UNCLASSIFIED:</span><br><span class="line">                        seeds.append(resultPoint)   # 该点没有被分类过，加到该簇中</span><br><span class="line">                        clusterResult[resultPoint] &#x3D; clusterId</span><br><span class="line">                    elif clusterResult[resultPoint] &#x3D;&#x3D; NOISE:   # 曾被设置为噪声的点</span><br><span class="line">                        clusterResult[resultPoint] &#x3D; clusterId</span><br><span class="line">            seeds &#x3D; seeds[1:]   # 约等于移除第一个数，实现遍历操作</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">def dbscan(data, eps, minPts):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 半径大小, 最小点个数</span><br><span class="line">    输出：分类簇id</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    clusterId &#x3D; 1</span><br><span class="line">    nPoints &#x3D; data.shape[1]  # 数据个数</span><br><span class="line">    clusterResult &#x3D; [UNCLASSIFIED] * nPoints  # 初始状态全部设置为未处理</span><br><span class="line">    for pointId in range(nPoints):</span><br><span class="line">        point &#x3D; data[:, pointId]</span><br><span class="line">        if clusterResult[pointId] &#x3D;&#x3D; UNCLASSIFIED:  # 存在没有被处理过的点</span><br><span class="line">            if expand_cluster(data, clusterResult, pointId, clusterId, eps, minPts):   # 成功分类，增加一个簇,继续对未处理的点进行分类</span><br><span class="line">                clusterId &#x3D; clusterId + 1</span><br><span class="line">    return clusterResult, clusterId - 1</span><br><span class="line"></span><br><span class="line">def plotFeature(data, clusters, clusterNum):</span><br><span class="line">    nPoints &#x3D; data.shape[1]</span><br><span class="line">    matClusters &#x3D; np.mat(clusters).transpose()</span><br><span class="line">    fig &#x3D; plt.figure()</span><br><span class="line">    scatterColors &#x3D; [&#39;black&#39;, &#39;blue&#39;, &#39;green&#39;, &#39;yellow&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;orange&#39;, &#39;brown&#39;]</span><br><span class="line">    ax &#x3D; fig.add_subplot(111)</span><br><span class="line">    for i in range(clusterNum + 1):</span><br><span class="line">        colorSytle &#x3D; scatterColors[i % len(scatterColors)]</span><br><span class="line">        subCluster &#x3D; data[:, np.nonzero(matClusters[:, 0].A &#x3D;&#x3D; i)]</span><br><span class="line">        ax.scatter(subCluster[0, :].flatten().A[0], subCluster[1, :].flatten().A[0], c&#x3D;colorSytle, s&#x3D;50)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    dataSet &#x3D; loadDataSet(&#39;788points.txt&#39;, splitChar&#x3D;&#39;,&#39;)</span><br><span class="line">    dataSet &#x3D; np.mat(dataSet).transpose()</span><br><span class="line">    # print(dataSet)</span><br><span class="line">    clusters, clusterNum &#x3D; dbscan(dataSet, 2, 15)  # 半径为2 最少点个数15</span><br><span class="line">    print(&quot;cluster Numbers &#x3D; &quot;, clusterNum)</span><br><span class="line">    # print(clusters)</span><br><span class="line">    plotFeature(dataSet, clusters, clusterNum)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    print(&#39;start! please wait...&#39;)</span><br><span class="line">    start &#x3D; time.clock()</span><br><span class="line">    main()</span><br><span class="line">    end &#x3D; time.clock()</span><br><span class="line">    print(&#39;finish all in %s&#39; % str(end - start))</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
       
     </div>
     
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/02/01/day2%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/02/01/14.ajax%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <strong class="article-nav-caption">&gt;</strong>
-    </a>
-  
-</nav>
 
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://aquarius-baby.github.io/2020/02/01/day1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/" rel="tag">吴恩达视频笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/02/01/day2%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/02/01/14.ajax%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title"></div>
+      </a>
+    
+  </nav>
+
+  
+   
   
 </article>
 
-
-<div class="ds-share share" data-thread-key="day1机器学习的定义" data-title="" data-url="https://aquarius-baby.github.io/2020/02/01/day1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89/"  data-images="http://7xkj1z.com1.z0.glb.clouddn.com/head.jpg" data-content="">
-    <div class="ds-share-inline">
-      <ul  class="ds-share-icons-16">
-      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-      </ul>
-      <div class="ds-share-icons-more">
-      </div>
-    </div>
- </div>
- 
-
-
-
-
-
-</div>
-      <footer id="footer">
+</section>
+      <footer class="footer">
   <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2020 Aquarius-Baby
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
-        </div>
-    </div>
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020
+        <i class="ri-heart-fill heart_icon"></i> Aquarius-Baby
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
   </div>
 </footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aquarius-Baby"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
     </div>
     
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
 
 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
 
 <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
 </script>
 
-<script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 
+<script src="/dist/main.js"></script>
 
+<!-- ImageViewer -->
 
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
     }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
+    viewer_init()
 </script>
 
-<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
 
 
+<script src="/js/clickLove.js"></script>
+
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
   </div>
 </body>
+
 </html>
