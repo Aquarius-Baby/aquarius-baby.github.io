@@ -1,4 +1,5 @@
 ---
+title: day3多变量线性回归
 date: 2020-02-01 16:15:03
 categories:
    - 机器学习

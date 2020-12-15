@@ -1,4 +1,5 @@
 ---
+title: day2回归算法
 date: 2020-02-01 16:15:02
 categories:
    - 机器学习

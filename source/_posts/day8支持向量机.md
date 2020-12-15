@@ -1,4 +1,5 @@
 ---
+title: day8支持向量机
 date: 2020-02-01 16:15:08
 categories:
    - 机器学习

@@ -1,4 +1,5 @@
 ---
+title: day10主成分分析法
 date: 2020-02-01 16:15:10
 categories:
    - 机器学习
