@@ -8,7 +8,7 @@ subtitle: '不如意事常八九 可与语人无二三'
 description: '叨叨的小屋'
 keywords:
 author:
-language: chinese
+language: zh-CN
 timezone: ''
 
 # URL
@@ -48,7 +48,7 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
@@ -71,7 +71,13 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  编程: programming
+  生活: life
+  其他: other
 tag_map:
+  吴恩达视频笔记: note
+  生活: life
+  其他: other
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
@@ -100,7 +106,10 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+#theme: landscape
+#theme: matery
+theme: ayer
+#theme: diaspora
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

@@ -4,7 +4,7 @@ date: 2020-02-01 14:15:14
 categories:
    - summary
 tags:
-   - 吴恩达视频笔记
+   - note
 top: 1
 ---
 吴恩达视频笔记目录
