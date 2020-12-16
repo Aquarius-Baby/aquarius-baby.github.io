@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="description" content="叨叨的小屋" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    day6应用机器学习的建议 |  Aquarius-Baby
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-2020-day6应用机器学习的建议"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  day6应用机器学习的建议
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/02/01/2020-day6%E5%BA%94%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BB%BA%E8%AE%AE/" class="article-date">
+  <time datetime="2020-02-01T08:15:06.000Z" itemprop="datePublished">2020-02-01</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">4 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h4 id="训练集、测试集"><a href="#训练集、测试集" class="headerlink" title="训练集、测试集"></a>训练集、测试集</h4><p>在预测过程中发现存在很大的错误，我们会考虑使用以下的方法来解决</p>
+<ol>
+<li>获取更多的训练样本</li>
+<li>减少训练的特征</li>
+<li>增加训练的特征</li>
+<li>尝试多项式特征</li>
+<li>增加或减少λ</li>
+</ol>
+<a id="more"></a>
+
+
+<p>一个假设可能对训练样本的误差较小，但其实际上仍然不准确(因为过度拟合)。<br>因此，为了评估假设，我们将给定训练样本数据集分成两组：训练集和测试集。 通常，训练集(training set)包含70％的数据，测试集(test set)包含剩余的30％。<br>使用如下：</p>
+<p>$$<br>1.; learn ; \Theta ; and ; minimize ; J_{test}(\Theta) ; using ; the ; training ; set </p>
+<p>2.;compute ; the;  test ; set ; error ; J_{test}(\Theta)</p>
+<p>$$</p>
+<p>测试集的误差<br>对于线性回归：<br>$$<br> J_{test}(\Theta)=\frac{1}{2m_{test}} \quad \sum_{i=1}^{m_{test}}{(h_\Theta(x_{test}^{(i)})-y_{test}^{(i)})^2}<br>$$</p>
+<p>对于分类-误分类错误（又名0/1错误分类错误）<br>$$<br>err(h_\Theta(x),y) = \frac{1}{0}   ; if ; h_\Theta(x) &gt; 0.5 ; and ; y = 0  ; or ;  h_\Theta(x) &lt; 0.5 ; and ; y = 1</p>
+<p>$$<br>测试集的平均测试错误为：<br>$$<br>Test ; error =\frac{1}{m_{test}}  err(h_\Theta(x_{test}^{(i)}),y_{test}^{(i)})<br>$$<br> 这为我们提供了错误分类的测试数据的比例。</p>
+<h4 id="训练集，交叉验证集，测试集"><a href="#训练集，交叉验证集，测试集" class="headerlink" title="训练集，交叉验证集，测试集"></a>训练集，交叉验证集，测试集</h4><p>学习算法很好地适合训练集，并不意味着它是一个很好的假设。 它可能过度适应，因此对测试集的预测效果会很差。 训练参数的数据集上测量的误差将低于任何其他数据集的误差。</p>
+<p>鉴于许多具有不同多项式度的模型，我们可以使用系统方法来识别“最佳”函数。 为了选择假设的模型，可以测试每个多项式的次数并查看错误结果。</p>
+<p>将数据集分解为三组的一种方法是：</p>
+<ul>
+<li>训练集：60%</li>
+<li>交叉验证集：20%</li>
+<li>测试集：20%</li>
+</ul>
+<p>我们现在可以使用以下方法对三个不同的集合计算三个的错误值：</p>
+<ul>
+<li>使用训练集，对每个多项式，优化Θ的参数。</li>
+<li>使用交叉验证集，找到具有最小误差的多项式。</li>
+<li>使用测试集，来估计具有较低误差的多项式误差。</li>
+</ul>
+<h4 id="偏差-vs-方差"><a href="#偏差-vs-方差" class="headerlink" title="偏差 vs. 方差"></a>偏差 vs. 方差</h4><p>多项式次数与欠拟合和过拟合之间的关系。<br><br/><br>高偏差是欠拟合的，高方差是过拟合。<br><br/><br>随着我们增加多项式的次数d，训练误差将趋于减小。<br><br/><br>同时，随着我们将d增加到某一个点，交叉验证误差将趋于减少。<br/><br>然后随着d的增加它会增加，形成一个凸曲线。<br><br/></p>
+<p>总结：</p>
+<ul>
+<li>高偏差：训练误差，交叉验证误差都很大，且 交叉误差 约等于 训练误差 </li>
+<li>高方差：训练误差会变小，而交叉误差会很大，且 交叉误差 &gt; 训练误差 </li>
+</ul>
+<h4 id="正则化与偏差、方差"><a href="#正则化与偏差、方差" class="headerlink" title="正则化与偏差、方差"></a>正则化与偏差、方差</h4><p>正则化参数很大，趋近于欠拟合  <br/><br>正则化参数接近0，趋近于欠拟合</p>
+<ol>
+<li>创建一个参数集合，λ∈{0,0.01,0.02,0.04,0.08,0.16,0.32,0.64,1.28,2.56,5.12,10.24}</li>
+<li>创建一组具有不同次数的多项式或任何其他变体的模型。</li>
+<li>遍历参数集合，对每一个参数，每一个模型都进行学习并获得一些𝚯。</li>
+<li>在不使用正则参数的情况下，用学习获得的𝚯计算交叉验证的误差</li>
+<li>选择在交叉验证集上产生最小误差的最佳组合。</li>
+<li>使用最佳组合Θ和λ，将其应用于问题的解决𝐉。</li>
+</ol>
+<h4 id="下一步需要做什么"><a href="#下一步需要做什么" class="headerlink" title="下一步需要做什么"></a>下一步需要做什么</h4><h5 id="我们的决策过程可细分如下："><a href="#我们的决策过程可细分如下：" class="headerlink" title="我们的决策过程可细分如下："></a>我们的决策过程可细分如下：</h5><ol>
+<li>获得更多训练样本：修复高方差</li>
+<li>尝试使用较少的特征：修复高方差</li>
+<li>增加特征：修复高偏差</li>
+<li>添加多项式特征：修复高偏差</li>
+<li>减少λ：修复高偏差</li>
+<li>增加λ：修正高方差</li>
+</ol>
+<h5 id="诊断神经网络"><a href="#诊断神经网络" class="headerlink" title="诊断神经网络"></a>诊断神经网络</h5><ol>
+<li>参数较少的神经网络容易出现欠拟合。它的计算成本也更低。</li>
+<li>具有更多参数的大型神经网络容易过度拟合。它的计算成本也很高。<br>在这种情况下，可以使用正则化（增加λ）来解决过度拟合问题。</li>
+</ol>
+<p>使用单个隐藏层是一个很好的启动默认值。<br>可以使用交叉验证集在多个隐藏层上训练您的神经网络。<br>然后，可以选择性能最佳的那个。</p>
+<h5 id="模型复杂性效应"><a href="#模型复杂性效应" class="headerlink" title="模型复杂性效应"></a>模型复杂性效应</h5><ol>
+<li>低阶多项式（lowmodelcomplexity）具有高偏差和低方差。在这种情况下，模型的拟合非常一致。</li>
+<li>高阶多项式（高模型复杂度）非常适合训练数据，测试数据非常差。这些对训练数据的偏差很小，但方差很大。</li>
+<li>实际上，我们希望在两者之间选择一个模型，它可以很好地推广，但也可以很好地拟合数据。</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://aquarius-baby.github.io/2020/02/01/2020-day6%E5%BA%94%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BB%BA%E8%AE%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/" rel="tag">吴恩达视频笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/02/01/2020-day7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            day7机器学习系统设计
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/02/01/2020-day5-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">day5-神经网络</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020
+        <i class="ri-heart-fill heart_icon"></i> Aquarius-Baby
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aquarius-Baby"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+
+<script src="/js/clickLove.js"></script>
+
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+    
+  </div>
+</body>
+
+</html>
