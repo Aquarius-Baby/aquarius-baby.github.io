@@ -1,6 +1,5 @@
 ---
 title: {{ title }}
-permalink: {{ title }}
 date: {{ date }}
 categories: 
     - 分类1

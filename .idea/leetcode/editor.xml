@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/../leetcode/src/leetcode/editor/cn/1046LastStoneWeight.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../leetcode/src/leetcode/editor/cn/1046LastStoneWeight.java" />
+              <option name="questionId" value="1127" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../leetcode/src/leetcode/editor/cn/330PatchingArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/../leetcode/src/leetcode/editor/cn/330PatchingArray.java" />
+              <option name="questionId" value="330" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
