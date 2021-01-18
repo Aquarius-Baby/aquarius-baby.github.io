@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">516</span>
+            <span class="post-count">855</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -100,24 +100,42 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="代码覆盖率"><a href="#代码覆盖率" class="headerlink" title="代码覆盖率"></a>代码覆盖率</h1><p>描述的是程序中源代码被测试的比例和程度。</p>
-<p>测试覆盖率包括代码覆盖率、功能覆盖率。</p>
-<p>代码覆盖率的作用：</p>
-<p>1、分析未覆盖部分的代码，从而反推在前期黑盒测试设计是否充分。<br>没有覆盖到的代码是否是测试设计的盲点，为什么没有考虑到？<br>需求/设计不够清晰，测试设计的理解有误，工程方法应用后的造成的策略性放弃等等，之后进行补充测试用例设计。</p>
+  <h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><p>测试过程中存在很多的问题。</p>
+<p>开发同学代码完成后，新功能是否有相关的单元测试？</p>
+<p>测试同学在测试过程中，测试用例是否足够完善，是否完全覆盖功能点？</p>
+<p>多次版本迭代后，是否存在废弃代码？</p>
+<p>用例执行了，这部分代码逻辑是否真的执行到了？</p>
+<p>代码修改了，需要重新测哪些功能？需要全量回归么？</p>
+<p>这些问题都可以通过代码覆盖率平台来解决。</p>
+<p>1、单元/自动化接口/功能测试后，统计覆盖率，查看未覆盖部分的代码，判断测试设计是否充分。<br>分析为什么存在没有覆盖到的代码，是否对需求理解存在偏差。</p>
 <p>2、检测出程序中的废代码，可以逆向反推在代码设计中思维混乱点，提醒设计/开发人员理清代码逻辑关系，提升代码质量。</p>
-<p>3、代码覆盖率高不能说明代码质量高，但是反过来看，代码覆盖率低，代码质量不会高到哪里去，可以作为测试自我审视的重要工具之一。</p>
-<ul>
-<li>充分了解测试情况 (测试过程中覆盖和未覆盖的地方,可能存在的风险)</li>
-<li>易于形成测试质量指标(可将质量指标化,质量仪表可视化)</li>
-<li>进一步避免测试漏测,尽可能发现测试死角,反推测试用例完善</li>
-<li>度量并促进测试用例编写质量(覆盖率反推测试用例的场景化设计)</li>
-<li>协助开发搜寻历史废弃代码(依托于方法覆盖率,及行覆盖率染色,为废弃代码判断提供依据)</li>
-<li>提供代码拆分的指导意见(直观分析热区代码.为优化提供方向支撑)</li>
-<li>精准测试回归(自动关联接口用例与接口代码的映射关系,在提交改动的时候,自动选择接口用例,自动回归)</li>
+<p>3、实时染色，显示代码覆盖情况，测试同学可以很清楚的看到，执行用例后，代码的执行情况。</p>
+<p>4、建立代码与用例的关联，代码修改，可以推出需要重新执行哪些用例。</p>
+<h1 id="二、目标-期望"><a href="#二、目标-期望" class="headerlink" title="二、目标/期望"></a>二、目标/期望</h1><ul>
+<li>充分了解测试情况<br>测试过程中覆盖和未覆盖的地方,可能存在的风险</li>
+<li>补充/完善用例<br>避免测试漏测，尽可能发现测试死角，反推测试用例完善</li>
+<li>提升代码质量<br>协助开发搜寻历史废弃代码(依托于方法覆盖率，及行覆盖率染色，为废弃代码判断提供依据)<br>提供代码拆分的指导意见(直观分析热区代码，为优化提供方向支撑)<br>在项目流程中，形成质量卡点，强化质量意识</li>
+<li>易于形成测试质量指标<br>通过质量指标化，质量仪表可视化，促进测试质量的提升</li>
+<li>精准测试回归，在项目快速迭代节奏下从容评估回归测试范围<br>自动关联接口用例与接口代码的映射关系，在提交改动的时候，从海量回归case中快速提取测试case</li>
 </ul>
 <p>将其分为3个阶段</p>
 <p><img src="/2021/01/04/%E8%A6%86%E7%9B%96%E7%8E%87%E5%B9%B3%E5%8F%B0/%E8%A6%86%E7%9B%96%E7%8E%87%E5%B9%B3%E5%8F%B0%E9%98%B6%E6%AE%B5.png" alt="覆盖率平台阶段"></p>
-<h2 id="一阶段功能"><a href="#一阶段功能" class="headerlink" title="一阶段功能"></a>一阶段功能</h2><h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><h1 id="二、目标"><a href="#二、目标" class="headerlink" title="二、目标"></a>二、目标</h1><h1 id="三、技术方案"><a href="#三、技术方案" class="headerlink" title="三、技术方案"></a>三、技术方案</h1><h1 id="四、影响范围"><a href="#四、影响范围" class="headerlink" title="四、影响范围"></a>四、影响范围</h1><h1 id="五、涉及端"><a href="#五、涉及端" class="headerlink" title="五、涉及端"></a>五、涉及端</h1><h1 id="六、上线清单"><a href="#六、上线清单" class="headerlink" title="六、上线清单"></a>六、上线清单</h1><h1 id="七、线上观测"><a href="#七、线上观测" class="headerlink" title="七、线上观测"></a>七、线上观测</h1> 
+<p>第一期的内容包括</p>
+<ul>
+<li>PHP的全量覆盖率统计</li>
+<li>PHP的增量覆盖率统计</li>
+<li>数据持久化存储及其展示</li>
+<li>接入CICD流水线中</li>
+</ul>
+<h1 id="三、技术方案"><a href="#三、技术方案" class="headerlink" title="三、技术方案"></a>三、技术方案</h1><p><a target="_blank" rel="noopener" href="https://testerhome.com/articles/20116">参考:基于 php-code-coverage 的增量代码覆盖率实现</a><br><a target="_blank" rel="noopener" href="https://testerhome.com/articles/23288">参考:代码覆盖率平台实现</a><br><a target="_blank" rel="noopener" href="https://testerhome.com/topics/23915">参考:代码实时染色系统</a></p>
+<h2 id="1-PHP的全量覆盖率统计"><a href="#1-PHP的全量覆盖率统计" class="headerlink" title="1. PHP的全量覆盖率统计"></a>1. PHP的全量覆盖率统计</h2><h3 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h3><ul>
+<li>xdebug: php插件，用于收集覆盖率信息</li>
+<li>git: 利用git diff获取增量代码信息</li>
+<li>php-code-coverage: phpunit下的一个库，用于从xdebug收集的覆盖率信息中生成覆盖率统计报告，支持xml、html等多种格式。</li>
+</ul>
+<h2 id="2-PHP的增量覆盖率统计"><a href="#2-PHP的增量覆盖率统计" class="headerlink" title="2. PHP的增量覆盖率统计"></a>2. PHP的增量覆盖率统计</h2><h2 id="3-数据持久化存储及其展示"><a href="#3-数据持久化存储及其展示" class="headerlink" title="3. 数据持久化存储及其展示"></a>3. 数据持久化存储及其展示</h2><p>每一次统计过后，存储相关数据。<br>可查询历史记录。<br>图表展示覆盖率变化趋势（比如使用折线图）。</p>
+<h2 id="4-接入CICD流水线中"><a href="#4-接入CICD流水线中" class="headerlink" title="4. 接入CICD流水线中"></a>4. 接入CICD流水线中</h2><p>做好配置，代码提交后，可自动触发单元测试，接口测试</p>
+<h1 id="四、影响范围"><a href="#四、影响范围" class="headerlink" title="四、影响范围"></a>四、影响范围</h1><h1 id="五、涉及端"><a href="#五、涉及端" class="headerlink" title="五、涉及端"></a>五、涉及端</h1><h1 id="六、上线清单"><a href="#六、上线清单" class="headerlink" title="六、上线清单"></a>六、上线清单</h1><h1 id="七、线上观测"><a href="#七、线上观测" class="headerlink" title="七、线上观测"></a>七、线上观测</h1> 
       <!-- reward -->
       
     </div>
