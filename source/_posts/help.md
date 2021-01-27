@@ -40,3 +40,5 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+ayer使用说明: https://shen-yu.gitee.io/2019/ayer/
