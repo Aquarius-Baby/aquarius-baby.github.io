@@ -114,7 +114,7 @@
 <p>检测出程序中的废弃代码，逆向反推在代码设计中思维混乱点，提醒设计/开发人员理清代码逻辑关系，提升代码质量。</p>
 <p>实时染色，显示代码覆盖情况，可以清楚看到，执行用例后代码的执行情况，降低漏测场景的复现成本，提高测试效率。</p>
 <p>建立代码与用例的关联，代码修改，可以快速在海量回归用例中提取测试需要的用例。</p>
-<p>目标：【作图】</p>
+<p>目标：【画图】</p>
 <ul>
 <li>降低漏测场景的复现成本</li>
 <li>在项目快速迭代节奏下从容评估回归测试范围</li>
@@ -123,15 +123,7 @@
 <li>通过可视化度量的方式，促进测试质量的提升</li>
 <li>在CICD流程中，形成质量卡点，强化质量意识</li>
 </ul>
-<p>将其分为3个阶段<br><img src="/2021/01/27/code-cover/%E8%A6%86%E7%9B%96%E7%8E%87%E5%B9%B3%E5%8F%B0%E9%98%B6%E6%AE%B5.png" alt="覆盖率平台阶段"></p>
-<p>第一期的内容包括</p>
-<ul>
-<li>PHP的全量覆盖率统计</li>
-<li>PHP的增量覆盖率统计</li>
-<li>数据持久化存储及其展示</li>
-<li>接入CICD流水线中</li>
-</ul>
-<h2 id="2-2-用户目标"><a href="#2-2-用户目标" class="headerlink" title="2.2 用户目标"></a>2.2 用户目标</h2><h3 id="2-2-1-leader"><a href="#2-2-1-leader" class="headerlink" title="2.2.1 leader"></a>2.2.1 leader</h3><ul>
+<h2 id="2-2-用户目标-【画图】"><a href="#2-2-用户目标-【画图】" class="headerlink" title="2.2 用户目标 【画图】"></a>2.2 用户目标 【画图】</h2><h3 id="2-2-1-leader"><a href="#2-2-1-leader" class="headerlink" title="2.2.1 leader"></a>2.2.1 leader</h3><ul>
 <li>易于形成测试质量指标<ul>
 <li>在项目流程中，形成质量卡点，强化质量意识</li>
 <li>通过质量指标化，质量仪表可视化，促进测试质量的提升</li>
@@ -179,10 +171,18 @@
 <li>代码与用例的映射</li>
 <li>增量代码用例推荐</li>
 </ol>
+<p>将其分为3个阶段<br><img src="/2021/01/27/code-cover/%E8%A6%86%E7%9B%96%E7%8E%87%E5%B9%B3%E5%8F%B0%E9%98%B6%E6%AE%B5.png" alt="覆盖率平台阶段"></p>
+<p>第一期的内容包括</p>
+<ul>
+<li>PHP的全量覆盖率统计</li>
+<li>PHP的增量覆盖率统计</li>
+<li>数据持久化存储及其展示</li>
+<li>接入CICD流水线中</li>
+</ul>
 <h2 id="2-4-信息架构【画图】"><a href="#2-4-信息架构【画图】" class="headerlink" title="2.4. 信息架构【画图】"></a>2.4. 信息架构【画图】</h2><h3 id="项目管理："><a href="#项目管理：" class="headerlink" title="项目管理："></a>项目管理：</h3><h3 id="覆盖率统计："><a href="#覆盖率统计：" class="headerlink" title="覆盖率统计："></a>覆盖率统计：</h3><h3 id="历史数据查看："><a href="#历史数据查看：" class="headerlink" title="历史数据查看："></a>历史数据查看：</h3><hr>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 平台上关联git上的项目</span><br><span class="line">- 添加&#x2F;删除</span><br><span class="line">2. 点击项目进入管理页面</span><br><span class="line">- 最近一次覆盖率统计情况：时间 人员 commitId 全量覆盖率 增量覆盖率 较上次结果</span><br><span class="line">- 点击查看具体某一次的覆盖率报告</span><br><span class="line">- 下载某一次报告</span><br><span class="line">- 全量覆盖率 增量覆盖率 变化曲线</span><br><span class="line">-</span><br><span class="line"></span><br><span class="line">如何开始、结束测试呢</span><br><span class="line">- 点击开始</span><br><span class="line">  创建任务</span><br><span class="line">  拉代码</span><br><span class="line">  启动</span><br><span class="line">  开始执行接口测试</span><br><span class="line"></span><br><span class="line">- 点击结束</span><br><span class="line">  合并，生成全量覆盖率测试报告</span><br><span class="line">  计算，生成增量覆盖率测试报告</span><br><span class="line">  数据存储，入库</span><br><span class="line">  任务完成</span><br><span class="line"></span><br><span class="line">3. 实时染色设想</span><br><span class="line">- 点击开始</span><br><span class="line">  创建任务</span><br><span class="line">  拉代码</span><br><span class="line">  启动</span><br><span class="line"></span><br><span class="line">- 测试中</span><br><span class="line">  开始执行接口测试</span><br><span class="line">  后台实时统计覆盖率情况，通过 socket 将覆盖数据传输至前端，前端进行渲染</span><br><span class="line">  &gt; PS: 最新代码文件，代码增量数据，前端均可在开始测试前获取。socket 只需要传输 行号信息即可</span><br><span class="line"></span><br><span class="line">- 点击结束</span><br><span class="line">  合并，生成全量覆盖率测试报告</span><br><span class="line">  计算，生成增量覆盖率测试报告</span><br><span class="line">  数据存储，入库</span><br><span class="line">  任务完成</span><br></pre></td></tr></table></figure>
 
-<h1 id="三、技术方案"><a href="#三、技术方案" class="headerlink" title="三、技术方案"></a>三、技术方案</h1><h2 id="3-1-整体架构【画图】"><a href="#3-1-整体架构【画图】" class="headerlink" title="3.1. 整体架构【画图】"></a>3.1. 整体架构【画图】</h2><h2 id="3-2-原型设计【画图】"><a href="#3-2-原型设计【画图】" class="headerlink" title="3.2. 原型设计【画图】"></a>3.2. 原型设计【画图】</h2><h2 id="3-3-PHP覆盖率实现"><a href="#3-3-PHP覆盖率实现" class="headerlink" title="3.3. PHP覆盖率实现"></a>3.3. PHP覆盖率实现</h2><h3 id="3-3-1-选型"><a href="#3-3-1-选型" class="headerlink" title="3.3.1 选型"></a>3.3.1 选型</h3><p>数据存储：mongodb + mysql</p>
+<h1 id="三、技术方案"><a href="#三、技术方案" class="headerlink" title="三、技术方案"></a>三、技术方案</h1><h2 id="3-1-平台结构【画图】"><a href="#3-1-平台结构【画图】" class="headerlink" title="3.1. 平台结构【画图】"></a>3.1. 平台结构【画图】</h2><h2 id="3-2-原型设计【画图】"><a href="#3-2-原型设计【画图】" class="headerlink" title="3.2. 原型设计【画图】"></a>3.2. 原型设计【画图】</h2><h2 id="3-3-PHP覆盖率实现"><a href="#3-3-PHP覆盖率实现" class="headerlink" title="3.3. PHP覆盖率实现"></a>3.3. PHP覆盖率实现</h2><h3 id="3-3-1-选型"><a href="#3-3-1-选型" class="headerlink" title="3.3.1 选型"></a>3.3.1 选型</h3><p>数据存储：mongodb + mysql</p>
 <blockquote>
 <p>测试结果的数据不需要频繁修改，可考虑存在mongodb中，任务存在mysql中</p>
 </blockquote>
@@ -200,7 +200,8 @@
 <h4 id="php-code-coverage-介绍"><a href="#php-code-coverage-介绍" class="headerlink" title="php-code-coverage 介绍"></a>php-code-coverage 介绍</h4><p>参考资料：<a target="_blank" rel="noopener" href="http://mtc.baidu.com/academy/detail/article/70">http://mtc.baidu.com/academy/detail/article/70</a></p>
 <p>Php-code-coverage是一个开源类库，它提供了收集、处理和展现PHP代码覆盖率信息的功能，可以直接从github获取源码。<br>使用php-code-coverage工具可以帮助测试人员hold住php代码，它会动态跟踪php代码的执行，合并并生成整个php项目的代码覆盖率，<br>最终以html、xml或者text等形式展现，同时也能生成Clover、Crap4J、PHPUnit等形式的基于XML的代码覆盖率信息记录文件。<br>以此为依据，我们可以分析新增的php代码的增量覆盖率，可以分析当前php代码覆盖率，评估测试用例的质量，决定是否要增加某些测试用例以提高代码覆盖率。</p>
 <p>我们在php项目测试中将php-code-coverage的api集成到jenkins持续集成自动化测试流程中，产出的代码覆盖率报表非常直观，<br>其中包括行覆盖率、函数与方法覆盖率、类与特质覆盖率结果，并且可以通过点击目录链接逐层逐级查看代码覆盖情况，以便测试人员对测试用例覆盖情况进行分析。</p>
-<h3 id="3-3-2-实现流程方案【画图】"><a href="#3-3-2-实现流程方案【画图】" class="headerlink" title="3.3.2 实现流程方案【画图】"></a>3.3.2 实现流程方案【画图】</h3><p>全量方案：</p>
+<h3 id="3-3-2-实现流程方案"><a href="#3-3-2-实现流程方案" class="headerlink" title="3.3.2 实现流程方案"></a>3.3.2 实现流程方案</h3><p><img src="/2021/01/27/code-cover/PHP-%E8%A6%86%E7%9B%96%E7%8E%87-%E6%B5%81%E7%A8%8B.png" alt="PHP-覆盖率-流程"></p>
+<p>全量方案：</p>
 <ol>
 <li>每一次进行测试收集覆盖率时，先清除历史数据</li>
 <li>进行接口测试，生成每一次的请求覆盖率</li>
@@ -209,7 +210,7 @@
 </ol>
 <p>增量方案：</p>
 <ol>
-<li>生成代码diff文件</li>
+<li>根据2个commit，生成代码diff文件</li>
 <li>得到每个文件增量变化的行号</li>
 <li>获取测试中未覆盖代码情况</li>
 <li>进行数据分析，计算得到增量覆盖率</li>
