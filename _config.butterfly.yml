@@ -14,7 +14,7 @@ menu:
 #   List||fas fa-list:
 #     - Music || /music/ || fas fa-music
 #     - Movie || /movies/ || fas fa-video
-   链接: /link/ || fas fa-link
+#   链接: /link/ || fas fa-link
    关于我: /about/ || fas fa-heart
 
 # Hide the child menu items in mobile sidebar
@@ -80,7 +80,8 @@ katex:
 # --------------------------------------
 
 # Favicon（网站图标）
-favicon: /img/favicon.png
+#favicon: /img/favicon.png
+favicon: /images/favicon2.jpg
 
 # Avatar (头像)
 avatar:
@@ -90,26 +91,27 @@ avatar:
 # The banner image of home page 首页图片
 index_img: /images/background.jpg
 
-# If the banner of page not setting, it will show the top_img
-default_top_img:
+# 主页默认的图，在没有配置 top_img 的情况下
+default_top_img: /images/background.jpg
 
-# The banner image of archive page
-archive_img:
+# 归档封面的图
+archive_img: /images/background.jpg
 
 # If the banner of tag page not setting, it will show the top_img
-# note: tag page, not tags page (子标签页面的 top_img)
-tag_img:
+# 子标签页面的 top_img
+tag_img: /images/background.jpg
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
+# 每个 tag 的 top_img
 tag_per_img:
-#aplayer: https://xxxxxx.png
-#android: ddddddd.png
+  - aplayer: https://xxxxxx.png
+  - android: ddddddd.png
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分类页面的 top_img)
-category_img:
+category_img: /images/background.jpg
 
 # The banner image of category page
 # format:
@@ -120,7 +122,7 @@ category_per_img:
 
 cover:
   # display the cover or not (是否显示文章封面)
-  index_enable: tru
+  index_enable: true
   aside_enable: true
   archives_enable: true
   # the position of cover in home page (封面显示的位置)
@@ -128,10 +130,16 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (当没有设置cover时，默认的封面显示)
   default_cover:
+    - /images/cat.jpg
+    - /images/bear.jpg
+    - /images/ring-love.jpg
+    - /images/flower.jpg
+    - /images/picture1.jpg
 #    - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.ewebweb.com%2Fuploads%2F20191230%2F14%2F1577685866-JkUhPyKGrQ.jpg&refer=http%3A%2F%2Fimg.ewebweb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614936311&t=3a8ac5ec94278542168d878e90179675
-    - https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1974728075,625919050&fm=26&gp=0.jpg
-    - https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2609175671,784470616&fm=26&gp=0.jpg
+#    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.ewebweb.com%2Fuploads%2F20191230%2F14%2F1577685866-JkUhPyKGrQ.jpg&refer=http%3A%2F%2Fimg.ewebweb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614936311&t=3a8ac5ec94278542168d878e90179675
+#    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F44%2F30129%2Ff488a0984ef131e9_1366x768.jpg&refer=http%3A%2F%2Fdik.img.kttpdq.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614943788&t=ede24695c709ec4b0d1f44e946fd6a48
+#    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F19%2F13065%2F24c211e4ece673db_1366x768.jpg&refer=http%3A%2F%2Fdik.img.kttpdq.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614944996&t=97565b3dc3070414ae58d366be5a42f6
+
 # Replace Broken Images (替换无法显示的图片)
 error_img:
   flink: /img/friend_404.gif
@@ -479,8 +487,7 @@ tag_ui: default # 留空或 index
 # Website Background (设置网站背景)
 # can set it to color or image (可设置图片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3833753138,2895650804&fm=26&gp=0.jpg
-#background: /images/background.jpg
+background: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201312%2F31%2F111859myvyiivetyftfz2n.jpg&refer=http%3A%2F%2Fattach.bbs.miui.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614944324&t=3ac8a22ff204175a3015f408e8db45f5
 
 # Footer Background
 footer_bg: false
