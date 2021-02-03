@@ -2,9 +2,7 @@
 title: react学习笔记目录
 date: 2020-02-01 14:15:14
 categories:
-   - summary
-tags:
-   - react笔记
+   - 目录
 top: 1
 ---
 react基础笔记：

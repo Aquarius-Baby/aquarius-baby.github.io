@@ -1,7 +1,7 @@
 ---
 title: LRU/LFU
 categories:
-  - Java
+  - 笔记
 tags:
   - 算法
   - 面试

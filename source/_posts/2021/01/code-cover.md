@@ -1,11 +1,7 @@
 ---
 title: code-cover
 categories:
-  - 分类1
-  - 分类2
-tags:
-  - 标签1
-  - 标签2
+  - 工作记录
 date: 2021-01-27 14:32:34
 ---
  

@@ -2,9 +2,7 @@
 title: 机器学习笔记-吴恩达视频
 date: 2020-02-01 14:15:14
 categories:
-   - summary
-tags:
-   - note
+   - 目录
 top: 1
 ---
 吴恩达视频笔记目录

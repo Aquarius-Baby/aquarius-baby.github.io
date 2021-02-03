@@ -1,11 +1,11 @@
 ---
 title: leetcode206反转链表
 date: 2020-02-02 20:54:52
+categories:
+    - 算法
 tags:
     - leetcode
     - 链表
-categories:
-    - 算法
 ---
 # 题目
 反转一个单链表。
