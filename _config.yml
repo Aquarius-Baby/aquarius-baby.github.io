@@ -74,13 +74,13 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
-  编程: programming
-  生活: life
-  其他: other
+#  编程: programming
+#  生活: life
+#  其他: other
 tag_map:
-  吴恩达视频笔记: note
-  生活: life
-  其他: other
+#  吴恩达视频笔记: note
+#  生活: life
+#  其他: other
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
