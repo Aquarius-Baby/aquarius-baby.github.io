@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>day7机器学习系统设计 | Aquarius-Baby</title><meta name="keywords" content="吴恩达视频笔记"><meta name="author" content="Aquarius-Baby"><meta name="copyright" content="Aquarius-Baby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="误差分析 快速的选择一个模型实现，用交叉验证集去测试。 画出学习曲线，决定是需要更多的数据还是更多的特征，或者其他。 检查交叉验证集上的错误，尝试找到一个合适的点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day7机器学习系统设计">
+<meta property="og:url" content="https://aquarius-baby.github.io/machineLearning/day7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="Aquarius-Baby">
+<meta property="og:description" content="误差分析 快速的选择一个模型实现，用交叉验证集去测试。 画出学习曲线，决定是需要更多的数据还是更多的特征，或者其他。 检查交叉验证集上的错误，尝试找到一个合适的点。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aquarius-baby.github.io/images/picture1.jpg">
+<meta property="article:published_time" content="2020-02-01T08:15:07.000Z">
+<meta property="article:modified_time" content="2021-04-05T14:12:19.741Z">
+<meta property="article:author" content="Aquarius-Baby">
+<meta property="article:tag" content="吴恩达视频笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aquarius-baby.github.io/images/picture1.jpg"><link rel="shortcut icon" href="/images/favicon2.jpg"><link rel="canonical" href="https://aquarius-baby.github.io/machineLearning/day7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-04-05 22:12:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/picture1.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aquarius-Baby</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">day7机器学习系统设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2020-02-01T08:15:07.000Z" title="undefined 2020-02-01 16:15:07">2020-02-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h1><ul>
+<li>快速的选择一个模型实现，用交叉验证集去测试。</li>
+<li>画出学习曲线，决定是需要更多的数据还是更多的特征，或者其他。</li>
+<li>检查交叉验证集上的错误，尝试找到一个合适的点。<a id="more"></a>
+</li>
+</ul>
+<p>例子：垃圾邮件的分类</p>
+<p>例如，假设我们有500封电子邮件，我们的算法对其中的100封进行了错误分类。 我们可以手动分析100封电子邮件，并根据它们的电子邮件类型对其进行分类。 然后，我们可以尝试提供新的提示和功能，以帮助我们正确地分类这100封电子邮件。 因此，如果我们的大多数错误分类的电子邮件都是试图窃取密码的电子邮件，那么我们可以找到一些特定于这些电子邮件的功能并将它们添加到我们的模型中。 我们还可以看到如何根据其根对每个单词进行分类来改变我们的错误率：</p>
+<script type="math/tex; mode=display">discount/discounting</script><p>将错误结果作为单个数值获取非常重要。 否则很难评估算法的性能。 例如，如果我们使用词干，那就是将不同形式的同一个词（失败/失败/失败）视为一个单词（失败）的过程，得到3％的错误率而不是5％，那么我们一定要把它添加到我们的模型中。</p>
+<p>但是，如果我们试图区分大写和小写字母并结束得到3.2％的错误率而不是3％，那么我们应该避免使用这个新功能。因此，我们应该尝试新事物，获取错误率的数值，并根据我们的结果决定我们是否要保留新功能。</p>
+<h1 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h1><p>场景：<br><br>假如某个班级有男生80人,女生20人,共计100人。目标是找出所有女生。<br><br>现在某人挑选出50个人,其中20人是女生,另外还错误的把30个男生也当作女生挑选出来了。<br>作为需要来评估(evaluation)下他的工作。</p>
+<p>评估指标包括：准确率(Accuracy),精确率(Precision),召回率(Recall)和F1-Measure</p>
+<h2 id="准确率-accurancy"><a href="#准确率-accurancy" class="headerlink" title="准确率 accurancy"></a>准确率 accurancy</h2><p>准确率(accuracy)的定义是: 对于给定的测试数据集，分类器正确分类的样本数与总样本数之比。也就是损失函数是0-1损失时测试数据集上的准确率[1].</p>
+<p>前面的场景中，实际情况是那个班级有男的和女的两类，将班级中的人分为男女两类。accuracy需要得到的是分正确的人占总人数的比例。很容易，我们可以得到：其中70(20女+50男)人判定正确了,而总人数是100人，所以它的accuracy就是70%。</p>
+<p>由准确率，我们的确可以在一些场合，从某种意义上得到一个分类器是否有效，但它并不总是能有效的评价一个分类器的工作。<br><br>举个例子,癌症的判断。癌症的出现可能行比较低（假设是0.02%），假如我将所有人都判断为没有癌症，那么正确率有99.98%，比几乎所有的算法的准确率都高，但这不是我们需要的算法。<br>这时候，就需要考虑使用precision,recall和f1-measure等评价指标了。</p>
+<p>在说precision,recall和f1-measure之前,我们需要先需要定义TP,FN,FP,TN四种分类情况。<br>按照前面例子,我们需要从一个班级中的人中寻找所有女生,如果把这个任务当成一个分类器的话,那么女生就是我们需要的,而男生不是,所以我们称女生为”正类”,而男生为”负类”</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>相关(Relevant),正类</th>
+<th>无关(NonRelevant),负类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>被检索到(Retrieved)</td>
+<td>true positives<br>(TP 正类判定为正类)<br> ==女判断为女==</td>
+<td>false positives<br>(FP 负类判定为正类) <br>==男判断为女==</td>
+</tr>
+<tr>
+<td>未被检索到(Not Retrieved)</td>
+<td>false negatives<br>(FN 正类判定为负类)<br>==女判断为男==</td>
+<td>true negatives<br>(TN 负类判定为负类)<br>==男判断为男==</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>所以在例子中</p>
+<ul>
+<li>TP=20</li>
+<li>FP=30</li>
+<li>FN=0</li>
+<li>TN=50</li>
+</ul>
+<h3 id="精确度-precision"><a href="#精确度-precision" class="headerlink" title="精确度 precision"></a>精确度 precision</h3><script type="math/tex; mode=display">
+P = \frac{TP}{TP+FP}</script><p>它计算的是所有”正确被检索的item(TP)”占所有”实际被检索到的(TP+FP)”的比例.</p>
+<p>在例子中就是希望知道得到的所有人中,正确的人(也就是女生)占有的比例。所以其precision也就是40%(20女生/(20女生+30误判为女生的男生)).</p>
+<h2 id="召回率"><a href="#召回率" class="headerlink" title="召回率"></a>召回率</h2><script type="math/tex; mode=display">R = \frac{TP}{TP+FN}</script><p>它计算的是所有”正确被检索的item(TP)”占所有”应该检索到的item(TP+FN)”的比例。</p>
+<p>在例子中就是希望知道此君得到的女生占本班中所有女生的比例,所以其recall也就是100%(20女生/(20女生+ 0 误判为男生的女生))</p>
+<h2 id="F值"><a href="#F值" class="headerlink" title="F值"></a>F值</h2><p>F1值就是精确值和召回率的调和均值,也就是</p>
+<script type="math/tex; mode=display">
+\frac{2}{F_1} = \frac{1}{P} + \frac{1}{R}</script><p>得到</p>
+<script type="math/tex; mode=display">
+F_1 = 2\frac{PR}{P+R}</script><p>精确度就是找得对，召回率就是找得全。</p>
+<p>精确度和召回率是互相影响的，理想情况下肯定是做到两者都高，但是一般情况下精确度高、召回率就低，召回率低、精确度高，当然如果两者都低，那是什么地方出问题了。一般情况，用不同的阀值，统计出一组不同阀值下的精确度和召回率。</p>
+<p>如果是做搜索，那就是保证召回的情况下提升精确度；如果做疾病监测、反垃圾，则是保精确度的条件下，提升召回。</p>
+<p>所以，在两者都要求高的情况下，可以用F1来衡量。</p>
+<h1 id="ROC、AUC"><a href="#ROC、AUC" class="headerlink" title="ROC、AUC"></a>ROC、AUC</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>相关(Relevant),正类</th>
+<th>无关(NonRelevant),负类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>被检索到(Retrieved)</td>
+<td>true positives<br>(TP 正类判定为正类)<br> ==女判断为女==</td>
+<td>false positives<br>(FP 负类判定为正类) <br>==男判断为女==</td>
+</tr>
+<tr>
+<td>未被检索到(Not Retrieved)</td>
+<td>false negatives<br>(FN 正类判定为负类)<br>==女判断为男==</td>
+<td>true negatives<br>(TN 负类判定为负类)<br>==男判断为男==</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ROC(Receiver Operating Characteristic)关注两个指标</p>
+<ul>
+<li>True Positive Rate ( TPR )  = TP / [ TP + FN] ，TPR代表能将正例分对的概率</li>
+<li>False Positive Rate( FPR ) = FP / [ FP + TN] ，FPR代表将负例错分为正例的概率</li>
+</ul>
+<p>在ROC 空间中，每个点的横坐标是FPR，纵坐标是TPR，这也就描绘了分类器在TP（真正的正例）和FP（错误的正例）间的trade-off。</p>
+<p>ROC的主要分析工具是一个画在ROC空间的曲线——ROC curve。<br><br>我们知道，对于二值分类问题，实例的值往往是连续值，我们通过设定一个阈值，将实例分类到正类或者负类（比如大于阈值划分为正类）。<br><br>因此我们可以变化阈值，根据不同的阈值进行分类，根据分类结果计算得到ROC空间中相应的点，连接这些点就形成ROC curve。ROC curve经过（0,0）（1,1），实际上(0, 0)和(1, 1)连线形成的ROC curve实际上代表的是一个随机分类器。一般情况下，这个曲线都应该处于(0, 0)和(1, 1)连线的上方。<br>用ROC curve来表示分类器的performance很直观好用。</p>
+<blockquote>
+<p>经过（0，0）表示将所有的实例全部分到负类。则，将正例分对的概率为0。负例分错的概率也为0。<br><br>经过（1，1）表示将所有的实例全部分到正类。则，将正例分对的概率为1。负例全部分错，概率也为1。</p>
+</blockquote>
+<p>可是，人们总是希望能有一个数值来标志分类器的好坏。</p>
+<p>于是Area Under roc Curve(AUC)就出现了。<br>顾名思义，AUC的值就是处于ROC curve下方的那部分面积的大小。<br><br>通常，AUC的值介于0.5到1.0之间，较大的AUC代表了较好的Performance。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">吴恩达视频笔记</a></div><div class="post_share"><div class="social-share" data-image="/images/picture1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/machineLearning/day8%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/"><img class="prev-cover" src="/images/cat.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">day8支持向量机</div></div></a></div><div class="next-post pull-right"><a href="/machineLearning/day6%E5%BA%94%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%BB%BA%E8%AE%AE/"><img class="next-cover" src="/images/cat.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">day6应用机器学习的建议</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/machineLearning/day2回归算法/" title="day2回归算法"><img class="cover" src="/images/flower.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day2回归算法</div></div></a></div><div><a href="/machineLearning/day10主成分分析法/" title="day10主成分分析法"><img class="cover" src="/images/bear.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day10主成分分析法</div></div></a></div><div><a href="/machineLearning/day4正则化/" title="day4正则化"><img class="cover" src="/images/bear.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day4正则化</div></div></a></div><div><a href="/machineLearning/day3多变量线性回归/" title="day3多变量线性回归"><img class="cover" src="/images/picture1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day3多变量线性回归</div></div></a></div><div><a href="/machineLearning/day5-神经网络/" title="day5-神经网络"><img class="cover" src="/images/picture1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day5-神经网络</div></div></a></div><div><a href="/machineLearning/day6应用机器学习的建议/" title="day6应用机器学习的建议"><img class="cover" src="/images/cat.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day6应用机器学习的建议</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Aquarius-Baby</div><div class="author-info__description">白茶清欢无别事</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">误差分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E6%B5%8B%E6%8C%87%E6%A0%87"><span class="toc-number">2.</span> <span class="toc-text">评测指标</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E7%A1%AE%E7%8E%87-accurancy"><span class="toc-number">2.1.</span> <span class="toc-text">准确率 accurancy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%BE%E7%A1%AE%E5%BA%A6-precision"><span class="toc-number">2.1.1.</span> <span class="toc-text">精确度 precision</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AC%E5%9B%9E%E7%8E%87"><span class="toc-number">2.2.</span> <span class="toc-text">召回率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F%E5%80%BC"><span class="toc-number">2.3.</span> <span class="toc-text">F值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ROC%E3%80%81AUC"><span class="toc-number">3.</span> <span class="toc-text">ROC、AUC</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo"><img src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初始化hexo"/></a><div class="content"><a class="title" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo">初始化hexo</a><time datetime="2021-10-07T08:12:48.000Z" title="发表于 2021-10-07 16:12:48">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%A4%E8%82%A4/" title="护肤"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="护肤"/></a><div class="content"><a class="title" href="/%E6%8A%A4%E8%82%A4/" title="护肤">护肤</a><time datetime="2021-10-07T07:57:57.000Z" title="发表于 2021-10-07 15:57:57">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="区间问题"/></a><div class="content"><a class="title" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题">区间问题</a><time datetime="2021-04-23T06:34:46.000Z" title="发表于 2021-04-23 14:34:46">2021-04-23</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Aquarius-Baby</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div></div></body></html>

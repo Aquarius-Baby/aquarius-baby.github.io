@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>分类: 算法 | Aquarius-Baby</title><meta name="author" content="Aquarius-Baby"><meta name="copyright" content="Aquarius-Baby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="叨叨的小屋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aquarius-Baby">
+<meta property="og:url" content="https://aquarius-baby.github.io/categories/%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Aquarius-Baby">
+<meta property="og:description" content="叨叨的小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aquarius-baby.github.io/images/avatar.png">
+<meta property="article:author" content="Aquarius-Baby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aquarius-baby.github.io/images/avatar.png"><link rel="shortcut icon" href="/images/favicon2.jpg"><link rel="canonical" href="https://aquarius-baby.github.io/categories/%E7%AE%97%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-10-07 17:43:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="not-index-bg" id="page-header" style="background-image: url(/images/background.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aquarius-Baby</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">算法</h1></div></header><main class="layout" id="content-inner"><div class="recent-posts category_ui" id="recent-posts">  <div class="recent-post-item"><div class="post_cover left_radius"><a href="/algorithm/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="滑动窗口">     <img class="post_bg" src="/images/picture1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="滑动窗口"></a></div><div class="recent-post-info"><a class="article-title" href="/algorithm/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="滑动窗口">滑动窗口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-04-23T05:29:46.000Z" title="发表于 2021-04-23 13:29:46">2021-04-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a></span></div><div class="content">最小覆盖子串⽆重复字符的最⻓⼦串找到字符串中所有字⺟异位词</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/algorithm/%E8%82%A1%E7%A5%A8/" title="股票">     <img class="post_bg" src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="股票"></a></div><div class="recent-post-info"><a class="article-title" href="/algorithm/%E8%82%A1%E7%A5%A8/" title="股票">股票</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-03T13:00:40.000Z" title="发表于 2021-03-03 21:00:40">2021-03-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></span></div><div class="content">base：在交易日之前，    手里没有股票，收益 &#x3D; 0     手里有股票，这是不可能的，收益 &#x3D; -infinitydp[-1][k][0] &#x3D; 0dp[-1][k][1] &#x3D; -infinity在交易日中，只进行了0次交易    手里没有股票，收益 &#x3D; 0     手里有股票，这是不可能的，收益 &#x3D; -infinity    dp[i][0][0] &#x3D; 0 dp[i][0][1] &#x3D; -infinitydp[i][k][0] &#x3D; max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])dp[i][k][1] &#x3D; max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～k &#x3D; 1dp[i][1][0] &#x3D; max(dp[i-1][1][0], dp[i-1][1][1] + ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/leetcode/leetcode099/" title="099-恢复二叉搜索树">     <img class="post_bg" src="/images/bear.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="099-恢复二叉搜索树"></a></div><div class="recent-post-info"><a class="article-title" href="/leetcode/leetcode099/" title="099-恢复二叉搜索树">099-恢复二叉搜索树</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-25T02:17:56.000Z" title="发表于 2021-02-25 10:17:56">2021-02-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%A0%91/">树</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a></span></div><div class="content">package leetcode.editor.cn;
+99 恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的两个节点被错误地交换。请在不改变其结构的情况下，恢复这棵树。
+进阶：使用 O(n) 空间复杂度的解法很容易实现。你能想出一个只使用常数空间的解决方案吗？
+示例 1：输入：root = [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。
+示例 2：输入：root = [3,1,4,null,null,2]输出：[2,1,4,null,null,3]解释：2 不能在 3 的右子树中，因为 2 &lt; 3 。交换 2 和 3 使二叉搜索树有效。
+提示：
+树上节点的数目在范围 [2, 1000] 内-231 &lt;= Node.val &lt;= 231 - 1
+Related Topics 树 深度优先搜索
+解法1class Solution &#123;    //用两个变量x，y来记录需要交换的节点    private TreeNode x = nu ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/leetcode/leetcode124/" title="124-二叉树中的最大路径和">     <img class="post_bg" src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="124-二叉树中的最大路径和"></a></div><div class="recent-post-info"><a class="article-title" href="/leetcode/leetcode124/" title="124-二叉树中的最大路径和">124-二叉树中的最大路径和</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-24T01:46:13.000Z" title="发表于 2021-02-24 09:46:13">2021-02-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%A0%91/">树</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/leetcode/">leetcode</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E9%80%92%E5%BD%92/">递归</a></span></div><div class="content">124 二叉树中的最大路径和路径 被定义为一条从树中任意节点出发，沿父节点-子节点连接，达到任意节点的序列。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。
+路径和 是路径中各节点值的总和。
+给你一个二叉树的根节点 root ，返回其 最大路径和 。
+示例 1：输入：root = [1,2,3]输出：6解释：最优路径是 2 -&gt; 1 -&gt; 3 ，路径和为 2 + 1 + 3 = 6
+示例 2：输入：root = [-10,9,20,null,null,15,7]输出：42解释：最优路径是 15 -&gt; 20 -&gt; 7 ，路径和为 15 + 20 + 7 = 42
+提示：
+树中节点数目范围是 [1, 3 * 104]-1000 &lt;= Node.val &lt;= 1000
+解法1对于一个节点 a, 左节点贡献值b, 右节点贡献值ca点最大贡献值为：a +max(max(b,0),max(c,0))路径和为 a + b + c不断更新最大路径和
+/** * Definition for a binary tree no ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/leetcode/leetcode001/" title="1-两数之和">     <img class="post_bg" src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1-两数之和"></a></div><div class="recent-post-info"><a class="article-title" href="/leetcode/leetcode001/" title="1-两数之和">1-两数之和</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-23T02:07:12.000Z" title="发表于 2021-02-23 10:07:12">2021-02-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/leetcode/">leetcode</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E6%95%B0%E7%BB%84/">数组</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a></span></div><div class="content">1 两数之和2021-02-23 10:06:05
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+你可以按任意顺序返回答案。
+示例 1：输入：nums = [2,7,11,15], target = 9输出：[0,1]解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+示例 2：输入：nums = [3,2,4], target = 6输出：[1,2]
+示例 3：输入：nums = [3,3], target = 6输出：[0,1]
+提示：
+2 &lt;= nums.length &lt;= 103-109 &lt;= nums[i] &lt;= 109-109 &lt;= target &lt;= 109只会存在一个有效答案
+Related Topics 数组 哈希表
+解法1双层for循环遍历数组，依次获取2个数a,b，判断 a+b 是否符合要求。class Solution &#123;   ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/algorithm/number-sort-summary/" title="8大基本排序算法">     <img class="post_bg" src="/images/cat.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="8大基本排序算法"></a></div><div class="recent-post-info"><a class="article-title" href="/algorithm/number-sort-summary/" title="8大基本排序算法">8大基本排序算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-10T15:42:04.000Z" title="发表于 2020-02-10 23:42:04">2020-02-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">排序算法    平均时间复杂度
+
+冒泡排序    O(n2)
+选择排序    O(n2)
+插入排序    O(n2)
+希尔排序    O(n1.5)
+快速排序    O(N*logN)
+归并排序    O(N*logN)
+堆排序    O(N*logN)
+基数排序    O(d(n+r))
+
+
+冒泡排序基本思想两个数比较大小，较大的数冒起来，较小的数沉起来。
+过程（1）比较相邻的两个数据，如果第二个数小，就交换位置。（2）从前向后两两比较，一直到比较最后两个数据。最终最大的数被交换到最后一个位置，这样第一个最大数的位置就排好了。（3）继续重复上述过程，依次将第2.3…n-1个最大数排好位置。
+代码实现public class BubbleSort &#123;    public static void main(String[] args) &#123;        int[] nums = &#123;9, 1, 5, 3, 2, 7&#125;;        new BubbleSort().bubbleSort2(nums);        System.out.print ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/algorithm/listnode-summary/" title="链表题解">     <img class="post_bg" src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="链表题解"></a></div><div class="recent-post-info"><a class="article-title" href="/algorithm/listnode-summary/" title="链表题解">链表题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-10T07:44:53.000Z" title="发表于 2020-02-10 15:44:53">2020-02-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a></span></div><div class="content">找到中间节点1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 返回3
+1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 返回4
+class Solution &#123;    public void fingMiddleNode(ListNode head) &#123;        if (head == null) return;        // 1.找到中间节点        ListNode slow = head;        ListNode fast = head;        while (fast != null &amp;&amp; fast.next != null) &#123;            slow = slow.next;            fast = fast.next.next;        &#125;        ListNode mid = slow.next;        return mid;    &#125;&#125;
+删除倒数第k个节点 leetcod ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/algorithm/tree-summary/" title="二叉树题解">     <img class="post_bg" src="/images/picture1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二叉树题解"></a></div><div class="recent-post-info"><a class="article-title" href="/algorithm/tree-summary/" title="二叉树题解">二叉树题解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-10T07:18:03.000Z" title="发表于 2020-02-10 15:18:03">2020-02-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></span></div><div class="content">二叉树题解整理
+判断深度
+
+// leetcode 104 二叉树的最大深度class Solution &#123;    public int maxDepth(TreeNode root) &#123;        if(root == null) return 0;        int maxLeft = maxDepth(root.left);        int maxRight = maxDepth(root.right);        return maxLeft &gt; maxRight? maxLeft + 1 : maxRight +1;    &#125;&#125;
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/leetcode/leetcode206/" title="leetcode206反转链表">     <img class="post_bg" src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode206反转链表"></a></div><div class="recent-post-info"><a class="article-title" href="/leetcode/leetcode206/" title="leetcode206反转链表">leetcode206反转链表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-02T12:54:52.000Z" title="发表于 2020-02-02 20:54:52">2020-02-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/leetcode/">leetcode</a></span></div><div class="content">题目反转一个单链表。
+示例:
+输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL进阶:你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+
+解法1：使用递归思路递归，需要确定每一次需要做的事情，并找到结束的条件
+每一次递归需要确定的是2个节点，最后返回的节点 p，以及当前需要进行反转的节点我们要做的一轮递归只是 将当前节点加入到反转链表中，仅此而已假设
+
+n_1\rightarrow n_2\rightarrow ...\rightarrow n_{k-1}\rightarrow n_k\rightarrow n_{k+1}\rightarrow...n_m已经变成了
+
+n_1\rightarrow n_2\rightarrow...\rightarrow n_{k-1}\rightarrow n_k\rightarrow n_{k+1}\leftarrow...n_m我们希望的是n_{k+1}的下一个节点指向n_k
+实现代码class Solution &#123;    pu ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Aquarius-Baby</div><div class="author-info__description">白茶清欢无别事</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo"><img src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初始化hexo"/></a><div class="content"><a class="title" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo">初始化hexo</a><time datetime="2021-10-07T08:12:48.000Z" title="发表于 2021-10-07 16:12:48">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%A4%E8%82%A4/" title="护肤"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="护肤"/></a><div class="content"><a class="title" href="/%E6%8A%A4%E8%82%A4/" title="护肤">护肤</a><time datetime="2021-10-07T07:57:57.000Z" title="发表于 2021-10-07 15:57:57">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="区间问题"/></a><div class="content"><a class="title" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题">区间问题</a><time datetime="2021-04-23T06:34:46.000Z" title="发表于 2021-04-23 14:34:46">2021-04-23</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/react/"><span class="card-category-list-name">react</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item parent"><a class="card-category-list-link" href="/categories/%E5%88%86%E7%B1%BB1/"><span class="card-category-list-name">分类1</span><span class="card-category-list-count">3</span><i class="fas fa-caret-left expand"></i></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/"><span class="card-category-list-name">分类2</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/"><span class="card-category-list-name">工作记录</span><span class="card-category-list-count">3</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 1.1em; color: rgb(152, 5, 58)">计划</a><a href="/tags/hexo/" style="font-size: 1.5em; color: rgb(131, 117, 140)">hexo</a><a href="/tags/%E6%A0%87%E7%AD%BE1/" style="font-size: 1.5em; color: rgb(91, 196, 154)">标签1</a><a href="/tags/%E6%A0%87%E7%AD%BE2/" style="font-size: 1.5em; color: rgb(175, 126, 80)">标签2</a><a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.3em; color: rgb(156, 144, 156)">链表</a><a href="/tags/%E6%A0%91/" style="font-size: 1.3em; color: rgb(94, 62, 78)">树</a><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 1.3em; color: rgb(71, 19, 149)">深度优先搜索</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">31</span></a></li></ul></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Aquarius-Baby</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div></div></body></html>

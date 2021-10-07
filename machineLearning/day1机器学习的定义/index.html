@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>day1机器学习的定义 | Aquarius-Baby</title><meta name="keywords" content="吴恩达视频笔记"><meta name="author" content="Aquarius-Baby"><meta name="copyright" content="Aquarius-Baby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="机器学习的定义Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day1机器学习的定义">
+<meta property="og:url" content="https://aquarius-baby.github.io/machineLearning/day1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89/index.html">
+<meta property="og:site_name" content="Aquarius-Baby">
+<meta property="og:description" content="机器学习的定义Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aquarius-baby.github.io/images/ring-love.jpg">
+<meta property="article:published_time" content="2020-02-01T08:15:01.000Z">
+<meta property="article:modified_time" content="2021-04-05T14:12:19.740Z">
+<meta property="article:author" content="Aquarius-Baby">
+<meta property="article:tag" content="吴恩达视频笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aquarius-baby.github.io/images/ring-love.jpg"><link rel="shortcut icon" href="/images/favicon2.jpg"><link rel="canonical" href="https://aquarius-baby.github.io/machineLearning/day1%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-04-05 22:12:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/ring-love.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aquarius-Baby</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">day1机器学习的定义</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2020-02-01T08:15:01.000Z" title="undefined 2020-02-01 16:15:01">2020-02-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="机器学习的定义"><a href="#机器学习的定义" class="headerlink" title="机器学习的定义"></a>机器学习的定义</h1><p>Machine Learning，利用统计学技术，通过对数据的不断学习，获得其中的经验。</p>
+<a id="more"></a>
+<h1 id="一-监督学习"><a href="#一-监督学习" class="headerlink" title="一.监督学习"></a>一.监督学习</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h2><p>每一组用于学习的数据都有对应的输出值（正确的值）。&lt;/br&gt;<br>输出值可以是连续的值，也可以是离散的值。&lt;/br&gt;<br>根据输出值的不同，监督学习分为回归问题和分类问题。</p>
+<h2 id="2-监督学习例子"><a href="#2-监督学习例子" class="headerlink" title="2.监督学习例子"></a>2.监督学习例子</h2><p>1）房价的预测：面积与价格的关系（回归）。&lt;/br&gt;<br>2）肿瘤的判断：肿瘤类型与大小的判断（分类）。</p>
+<h1 id="二-无监督学习"><a href="#二-无监督学习" class="headerlink" title="二.无监督学习"></a>二.无监督学习</h1><h2 id="1-定义-1"><a href="#1-定义-1" class="headerlink" title="1.定义"></a>1.定义</h2><p>根据给定的数据，通过学习将数据分成多类。&lt;/br&gt;<br>将数据集分成不同簇的无监督学习也被称为聚类算法。</p>
+<h2 id="2-无监督学习例子"><a href="#2-无监督学习例子" class="headerlink" title="2.无监督学习例子"></a>2.无监督学习例子</h2><p>1) 谷歌新闻的分类：将相似内容的新闻链接放在一起成为新闻专题。<br>2) 根据基因分类：根据基因的相似性将人分群。<br>3) 鸡尾酒派对：将混合的声音分离开来。<br>4) 机器协同工作、社交网络分析、客户市场分析（针对性服务）、天文数据分析</p>
+<h2 id="无监督学习之dbscan笔记"><a href="#无监督学习之dbscan笔记" class="headerlink" title="无监督学习之dbscan笔记"></a>无监督学习之dbscan笔记</h2><h3 id="算法原理："><a href="#算法原理：" class="headerlink" title="算法原理："></a>算法原理：</h3><p>（1）DBSCAN通过检查数据集中每点的Eps邻域来搜索簇，如果点p的Eps邻域包含的点多于MinPts个，则创建一个以p为核心对象的簇；</p>
+<p>（2）然后，DBSCAN迭代地聚集从这些核心对象直接密度可达的对象，这个过程可能涉及一些密度可达簇的合并；</p>
+<p>（3）当没有新的点添加到任何簇时，该过程结束。</p>
+<h3 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">输入：数据集D，给定点在邻域内成为核心对象的最小邻域点数：MinPts,邻域半径：Eps   </span><br><span class="line">输出：簇集合</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>) 首先将数据集D中的所有对象标记为未处理状态</span><br><span class="line">(<span class="number">2</span>) <span class="keyword">for</span>（数据集D中每个对象p） do</span><br><span class="line">(<span class="number">3</span>)    <span class="keyword">if</span> （p已经归入某个簇或标记为噪声） then</span><br><span class="line">(<span class="number">4</span>)         <span class="keyword">continue</span>;</span><br><span class="line">(<span class="number">5</span>)    <span class="keyword">else</span></span><br><span class="line">(<span class="number">6</span>)         检查对象p的Eps邻域 NEps(p) ；</span><br><span class="line">(<span class="number">7</span>)         <span class="keyword">if</span> (NEps(p)包含的对象数小于MinPts) then</span><br><span class="line">(<span class="number">8</span>)                  标记对象p为边界点或噪声点；</span><br><span class="line">(<span class="number">9</span>)         <span class="keyword">else</span></span><br><span class="line">(<span class="number">10</span>)                 标记对象p为核心点，并建立新簇C, 并将p邻域内所有点加入C</span><br><span class="line">(<span class="number">11</span>)                 <span class="keyword">for</span> (NEps(p)中所有尚未被处理的对象q)  do</span><br><span class="line">(<span class="number">12</span>)                       检查其Eps邻域NEps(q)，若NEps(q)包含至少MinPts个对象，则将NEps(q)中未归入任何一个簇的对象加入C；</span><br><span class="line">(<span class="number">13</span>)                 end <span class="keyword">for</span></span><br><span class="line">(<span class="number">14</span>)        end <span class="keyword">if</span></span><br><span class="line">(<span class="number">15</span>)    end <span class="keyword">if</span></span><br><span class="line">(<span class="number">16</span>) end <span class="keyword">for</span></span><br></pre></td></tr></table></figure>
+<h3 id="实际实现代码"><a href="#实际实现代码" class="headerlink" title="实际实现代码"></a>实际实现代码</h3><p>数据下载:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17-55Q3p1dWwtX71jamxBuQ">788points.txt</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import math</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">UNCLASSIFIED &#x3D; False</span><br><span class="line">NOISE &#x3D; 0</span><br><span class="line"></span><br><span class="line">def loadDataSet(fileName, splitChar&#x3D;&#39;\t&#39;):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：文件名</span><br><span class="line">    输出：数据集</span><br><span class="line">    描述：从文件读入数据集</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    dataSet &#x3D; []</span><br><span class="line">    with open(fileName) as fr:</span><br><span class="line">        for line in fr.readlines():</span><br><span class="line">            curline &#x3D; line.strip().split(splitChar)</span><br><span class="line">            fltline &#x3D; list(map(float, curline))</span><br><span class="line">            dataSet.append(fltline)</span><br><span class="line">    return dataSet</span><br><span class="line"></span><br><span class="line">def dist(a, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：向量A, 向量B</span><br><span class="line">    输出：两个向量的欧式距离</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return math.sqrt(np.power(a - b, 2).sum())</span><br><span class="line"></span><br><span class="line">def eps_neighbor(a, b, eps):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：向量A, 向量B</span><br><span class="line">    输出：是否在eps范围内</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return dist(a, b) &lt; eps</span><br><span class="line"></span><br><span class="line">def region_query(data, pointId, eps):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 查询点id, 半径大小</span><br><span class="line">    输出：在eps范围内的点的id</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    nPoints &#x3D; data.shape[1]</span><br><span class="line">    seeds &#x3D; []</span><br><span class="line">    for i in range(nPoints):</span><br><span class="line">        if eps_neighbor(data[:, pointId], data[:, i], eps):</span><br><span class="line">            seeds.append(i)</span><br><span class="line">    return seeds</span><br><span class="line"></span><br><span class="line">def expand_cluster(data, clusterResult, pointId, clusterId, eps, minPts):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 分类结果, 待分类点id, 簇id, 半径大小, 最小点个数</span><br><span class="line">    输出：能否成功分类</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    seeds &#x3D; region_query(data, pointId, eps)  # 查找 pointId 半径内符合要求的点</span><br><span class="line">    if len(seeds) &lt; minPts:  # 个数过少，不满足minPts条件，设置为噪声点</span><br><span class="line">        clusterResult[pointId] &#x3D; NOISE</span><br><span class="line">        return False</span><br><span class="line">    else:</span><br><span class="line">        clusterResult[pointId] &#x3D; clusterId  # 将pointId和半径内的点划分到该簇</span><br><span class="line">        for seedId in seeds:</span><br><span class="line">            clusterResult[seedId] &#x3D; clusterId</span><br><span class="line"></span><br><span class="line">        while len(seeds) &gt; 0:  # 遍历seeds中的点，以每一个点为中心，扩大范围</span><br><span class="line">            currentPoint &#x3D; seeds[0]</span><br><span class="line">            queryResults &#x3D; region_query(data, currentPoint, eps)</span><br><span class="line">            if len(queryResults) &gt;&#x3D; minPts:</span><br><span class="line">                for i in range(len(queryResults)):</span><br><span class="line">                    resultPoint &#x3D; queryResults[i]</span><br><span class="line">                    if clusterResult[resultPoint] &#x3D;&#x3D; UNCLASSIFIED:</span><br><span class="line">                        seeds.append(resultPoint)   # 该点没有被分类过，加到该簇中</span><br><span class="line">                        clusterResult[resultPoint] &#x3D; clusterId</span><br><span class="line">                    elif clusterResult[resultPoint] &#x3D;&#x3D; NOISE:   # 曾被设置为噪声的点</span><br><span class="line">                        clusterResult[resultPoint] &#x3D; clusterId</span><br><span class="line">            seeds &#x3D; seeds[1:]   # 约等于移除第一个数，实现遍历操作</span><br><span class="line">        return True</span><br><span class="line"></span><br><span class="line">def dbscan(data, eps, minPts):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    输入：数据集, 半径大小, 最小点个数</span><br><span class="line">    输出：分类簇id</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    clusterId &#x3D; 1</span><br><span class="line">    nPoints &#x3D; data.shape[1]  # 数据个数</span><br><span class="line">    clusterResult &#x3D; [UNCLASSIFIED] * nPoints  # 初始状态全部设置为未处理</span><br><span class="line">    for pointId in range(nPoints):</span><br><span class="line">        point &#x3D; data[:, pointId]</span><br><span class="line">        if clusterResult[pointId] &#x3D;&#x3D; UNCLASSIFIED:  # 存在没有被处理过的点</span><br><span class="line">            if expand_cluster(data, clusterResult, pointId, clusterId, eps, minPts):   # 成功分类，增加一个簇,继续对未处理的点进行分类</span><br><span class="line">                clusterId &#x3D; clusterId + 1</span><br><span class="line">    return clusterResult, clusterId - 1</span><br><span class="line"></span><br><span class="line">def plotFeature(data, clusters, clusterNum):</span><br><span class="line">    nPoints &#x3D; data.shape[1]</span><br><span class="line">    matClusters &#x3D; np.mat(clusters).transpose()</span><br><span class="line">    fig &#x3D; plt.figure()</span><br><span class="line">    scatterColors &#x3D; [&#39;black&#39;, &#39;blue&#39;, &#39;green&#39;, &#39;yellow&#39;, &#39;red&#39;, &#39;purple&#39;, &#39;orange&#39;, &#39;brown&#39;]</span><br><span class="line">    ax &#x3D; fig.add_subplot(111)</span><br><span class="line">    for i in range(clusterNum + 1):</span><br><span class="line">        colorSytle &#x3D; scatterColors[i % len(scatterColors)]</span><br><span class="line">        subCluster &#x3D; data[:, np.nonzero(matClusters[:, 0].A &#x3D;&#x3D; i)]</span><br><span class="line">        ax.scatter(subCluster[0, :].flatten().A[0], subCluster[1, :].flatten().A[0], c&#x3D;colorSytle, s&#x3D;50)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    dataSet &#x3D; loadDataSet(&#39;788points.txt&#39;, splitChar&#x3D;&#39;,&#39;)</span><br><span class="line">    dataSet &#x3D; np.mat(dataSet).transpose()</span><br><span class="line">    # print(dataSet)</span><br><span class="line">    clusters, clusterNum &#x3D; dbscan(dataSet, 2, 15)  # 半径为2 最少点个数15</span><br><span class="line">    print(&quot;cluster Numbers &#x3D; &quot;, clusterNum)</span><br><span class="line">    # print(clusters)</span><br><span class="line">    plotFeature(dataSet, clusters, clusterNum)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    print(&#39;start! please wait...&#39;)</span><br><span class="line">    start &#x3D; time.clock()</span><br><span class="line">    main()</span><br><span class="line">    end &#x3D; time.clock()</span><br><span class="line">    print(&#39;finish all in %s&#39; % str(end - start))</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%B4%E6%81%A9%E8%BE%BE%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0/">吴恩达视频笔记</a></div><div class="post_share"><div class="social-share" data-image="/images/ring-love.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/machineLearning/day2%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95/"><img class="prev-cover" src="/images/flower.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">day2回归算法</div></div></a></div><div class="next-post pull-right"><a href="/reactNote/14.ajax%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/"><img class="next-cover" src="/images/cat.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">14.ajax实现路由跳转</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/machineLearning/day2回归算法/" title="day2回归算法"><img class="cover" src="/images/flower.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day2回归算法</div></div></a></div><div><a href="/machineLearning/day10主成分分析法/" title="day10主成分分析法"><img class="cover" src="/images/bear.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day10主成分分析法</div></div></a></div><div><a href="/machineLearning/day4正则化/" title="day4正则化"><img class="cover" src="/images/bear.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day4正则化</div></div></a></div><div><a href="/machineLearning/day3多变量线性回归/" title="day3多变量线性回归"><img class="cover" src="/images/picture1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day3多变量线性回归</div></div></a></div><div><a href="/machineLearning/day5-神经网络/" title="day5-神经网络"><img class="cover" src="/images/picture1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day5-神经网络</div></div></a></div><div><a href="/machineLearning/day6应用机器学习的建议/" title="day6应用机器学习的建议"><img class="cover" src="/images/cat.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">day6应用机器学习的建议</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Aquarius-Baby</div><div class="author-info__description">白茶清欢无别事</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">机器学习的定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">2.</span> <span class="toc-text">一.监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="toc-number">2.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BE%8B%E5%AD%90"><span class="toc-number">2.2.</span> <span class="toc-text">2.监督学习例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.</span> <span class="toc-text">二.无监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89-1"><span class="toc-number">3.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%BE%8B%E5%AD%90"><span class="toc-number">3.2.</span> <span class="toc-text">2.无监督学习例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E4%B9%8Bdbscan%E7%AC%94%E8%AE%B0"><span class="toc-number">3.3.</span> <span class="toc-text">无监督学习之dbscan笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-number">3.3.1.</span> <span class="toc-text">算法原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="toc-number">3.3.2.</span> <span class="toc-text">伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-number">3.3.3.</span> <span class="toc-text">实际实现代码</span></a></li></ol></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo"><img src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初始化hexo"/></a><div class="content"><a class="title" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo">初始化hexo</a><time datetime="2021-10-07T08:12:48.000Z" title="发表于 2021-10-07 16:12:48">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%A4%E8%82%A4/" title="护肤"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="护肤"/></a><div class="content"><a class="title" href="/%E6%8A%A4%E8%82%A4/" title="护肤">护肤</a><time datetime="2021-10-07T07:57:57.000Z" title="发表于 2021-10-07 15:57:57">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="区间问题"/></a><div class="content"><a class="title" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题">区间问题</a><time datetime="2021-04-23T06:34:46.000Z" title="发表于 2021-04-23 14:34:46">2021-04-23</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Aquarius-Baby</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div></div></body></html>

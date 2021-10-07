@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>hexo使用渲染公式 | Aquarius-Baby</title><meta name="keywords" content="hexo"><meta name="author" content="Aquarius-Baby"><meta name="copyright" content="Aquarius-Baby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="hexo渲染公式，修改配置文件https:&#x2F;&#x2F;blog.csdn.net&#x2F;littlehaes&#x2F;article&#x2F;details&#x2F;84370393 安装Kramednpm uninstall hexo-renderer-marked --savenpm install hexo-renderer-kramed --save 更改文件配置文件：&#x2F;node_modules&#x2F;hexo-renderer-k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo使用渲染公式">
+<meta property="og:url" content="https://aquarius-baby.github.io/hexo%E4%BD%BF%E7%94%A8%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Aquarius-Baby">
+<meta property="og:description" content="hexo渲染公式，修改配置文件https:&#x2F;&#x2F;blog.csdn.net&#x2F;littlehaes&#x2F;article&#x2F;details&#x2F;84370393 安装Kramednpm uninstall hexo-renderer-marked --savenpm install hexo-renderer-kramed --save 更改文件配置文件：&#x2F;node_modules&#x2F;hexo-renderer-k">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aquarius-baby.github.io/images/bear.jpg">
+<meta property="article:published_time" content="2020-02-01T16:23:40.000Z">
+<meta property="article:modified_time" content="2021-10-07T08:29:05.447Z">
+<meta property="article:author" content="Aquarius-Baby">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aquarius-baby.github.io/images/bear.jpg"><link rel="shortcut icon" href="/images/favicon2.jpg"><link rel="canonical" href="https://aquarius-baby.github.io/hexo%E4%BD%BF%E7%94%A8%E6%B8%B2%E6%9F%93%E5%85%AC%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-07 16:29:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/bear.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aquarius-Baby</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">hexo使用渲染公式</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2020-02-01T16:23:40.000Z" title="undefined 2020-02-02 00:23:40">2020-02-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">471</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>hexo渲染公式，修改配置文件<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/littlehaes/article/details/84370393">https://blog.csdn.net/littlehaes/article/details/84370393</a></p>
+<h3 id="安装Kramed"><a href="#安装Kramed" class="headerlink" title="安装Kramed"></a>安装Kramed</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<h3 id="更改文件配置"><a href="#更改文件配置" class="headerlink" title="更改文件配置"></a>更改文件配置</h3><p>文件：/node_modules/hexo-renderer-kramed/lib/renderer.js<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function formatText(text) &#123;</span><br><span class="line">    &#x2F;&#x2F; Fit kramed&#39;s rule: $$ + \1 + $$</span><br><span class="line">    return text.replace(&#x2F;&#96;\$(.*?)\$&#96;&#x2F;g, &#39;$$$$$1$$$$&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>修改为<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="停用hexo-math并安装mathjax"><a href="#停用hexo-math并安装mathjax" class="headerlink" title="停用hexo-math并安装mathjax"></a>停用hexo-math并安装mathjax</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-math --save</span><br><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
+<h3 id="更新Mathjax配置文件"><a href="#更新Mathjax配置文件" class="headerlink" title="更新Mathjax配置文件"></a>更新Mathjax配置文件</h3><p>文件：/node_modules/hexo-renderer-mathjax/mathjax.html</p>
+<p>最后一行修改为<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;mathjax&#x2F;2.7.1&#x2F;MathJax.js?config&#x3D;TeX-MML-AM_CHTML&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="更改默认转义规则"><a href="#更改默认转义规则" class="headerlink" title="更改默认转义规则"></a>更改默认转义规则</h3><p>因为LaTeX与markdown语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br>打开/node_modules\kramed\lib\rules\inline.js<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">escape: &#x2F;^\\([&#96;*\[\]()#$+\-.!_&gt;])&#x2F;,</span><br><span class="line">em: &#x2F;^\*((?:\*\*|[\s\S])+?)\*(?!\*)&#x2F;,</span><br></pre></td></tr></table></figure><br>修改后：<br><figure class="highlight plain"><figcaption><span>inline </span></figcaption><table><tr><td class="code"><pre><span class="line">  &#x2F;&#x2F; escape: &#x2F;^\\([\\&#96;*&#123;&#125;\[\]()#$+\-.!_&gt;])&#x2F;,</span><br><span class="line">  escape: &#x2F;^\\([&#96;*\[\]()#$+\-.!_&gt;])&#x2F;,</span><br><span class="line">  autolink: &#x2F;^&lt;([^ &gt;]+(@|:\&#x2F;)[^ &gt;]+)&gt;&#x2F;,</span><br><span class="line">  url: noop,</span><br><span class="line">  html: &#x2F;^&lt;!--[\s\S]*?--&gt;|^&lt;(\w+(?!:\&#x2F;|[^\w\s@]*@)\b)*?(?:&quot;[^&quot;]*&quot;|&#39;[^&#39;]*&#39;|[^&#39;&quot;&gt;])*?&gt;([\s\S]*?)?&lt;\&#x2F;\1&gt;|^&lt;(\w+(?!:\&#x2F;|[^\w\s@]*@)\b)(?:&quot;[^&quot;]*&quot;|&#39;[^&#39;]*&#39;|[^&#39;&quot;&gt;])*?&gt;&#x2F;,</span><br><span class="line">  link: &#x2F;^!?\[(inside)\]\(href\)&#x2F;,</span><br><span class="line">  reflink: &#x2F;^!?\[(inside)\]\s*\[([^\]]*)\]&#x2F;,</span><br><span class="line">  nolink: &#x2F;^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]&#x2F;,</span><br><span class="line">  reffn: &#x2F;^!?\[\^(inside)\]&#x2F;,</span><br><span class="line">  strong: &#x2F;^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)&#x2F;,</span><br><span class="line">  &#x2F;&#x2F; em: &#x2F;^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)&#x2F;,</span><br><span class="line">  em: &#x2F;^\*((?:\*\*|[\s\S])+?)\*(?!\*)&#x2F;,</span><br><span class="line">  code: &#x2F;^(&#96;+)\s*([\s\S]*?[^&#96;])\s*\1(?!&#96;)&#x2F;,</span><br><span class="line">  br: &#x2F;^ &#123;2,&#125;\n(?!\s*$)&#x2F;,</span><br><span class="line">  del: noop,</span><br><span class="line">  text: &#x2F;^[\s\S]+?(?&#x3D;[\\&lt;!\[_*&#96;$]| &#123;2,&#125;\n|$)&#x2F;,</span><br><span class="line">  math: &#x2F;^\$\$\s*([\s\S]*?[^\$])\s*\$\$(?!\$)&#x2F;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="主题下开启mathjax"><a href="#主题下开启mathjax" class="headerlink" title="主题下开启mathjax"></a>主题下开启mathjax</h3><p>打开主题目录下的config.yml文件（注意这里是所使用主题的yml文件，不是hexo的yml文件）<br>加入下面这句：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
+<p>博客的时候需要开启Latex就需要加上头开启Mathjax<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 护肤</span><br><span class="line">categories:</span><br><span class="line">  - 生活</span><br><span class="line">tags:</span><br><span class="line">  - tag1</span><br><span class="line">date: 2021-10-07 15:57:57 </span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post_share"><div class="social-share" data-image="/images/bear.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/leetcode/leetcode206/"><img class="prev-cover" src="/images/ring-love.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">leetcode206反转链表</div></div></a></div><div class="next-post pull-right"><a href="/machineLearning/day10%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E6%B3%95/"><img class="next-cover" src="/images/bear.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">day10主成分分析法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/help/" title="Hexo 使用说明~"><img class="cover" src="/images/cat.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-05</div><div class="title">Hexo 使用说明~</div></div></a></div><div><a href="/2021/01/配置修改/" title="hexo配置修改"><img class="cover" src="/images/ring-love.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-04</div><div class="title">hexo配置修改</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Aquarius-Baby</div><div class="author-info__description">白茶清欢无别事</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Kramed"><span class="toc-number">1.</span> <span class="toc-text">安装Kramed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">更改文件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9C%E7%94%A8hexo-math%E5%B9%B6%E5%AE%89%E8%A3%85mathjax"><span class="toc-number">3.</span> <span class="toc-text">停用hexo-math并安装mathjax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0Mathjax%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">更新Mathjax配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E8%BD%AC%E4%B9%89%E8%A7%84%E5%88%99"><span class="toc-number">5.</span> <span class="toc-text">更改默认转义规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E4%B8%8B%E5%BC%80%E5%90%AFmathjax"><span class="toc-number">6.</span> <span class="toc-text">主题下开启mathjax</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo"><img src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初始化hexo"/></a><div class="content"><a class="title" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo">初始化hexo</a><time datetime="2021-10-07T08:12:48.000Z" title="发表于 2021-10-07 16:12:48">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%A4%E8%82%A4/" title="护肤"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="护肤"/></a><div class="content"><a class="title" href="/%E6%8A%A4%E8%82%A4/" title="护肤">护肤</a><time datetime="2021-10-07T07:57:57.000Z" title="发表于 2021-10-07 15:57:57">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="区间问题"/></a><div class="content"><a class="title" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题">区间问题</a><time datetime="2021-04-23T06:34:46.000Z" title="发表于 2021-04-23 14:34:46">2021-04-23</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Aquarius-Baby</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div></div></body></html>

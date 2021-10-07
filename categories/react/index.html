@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>分类: react | Aquarius-Baby</title><meta name="author" content="Aquarius-Baby"><meta name="copyright" content="Aquarius-Baby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="叨叨的小屋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aquarius-Baby">
+<meta property="og:url" content="https://aquarius-baby.github.io/categories/react/index.html">
+<meta property="og:site_name" content="Aquarius-Baby">
+<meta property="og:description" content="叨叨的小屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://aquarius-baby.github.io/images/avatar.png">
+<meta property="article:author" content="Aquarius-Baby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aquarius-baby.github.io/images/avatar.png"><link rel="shortcut icon" href="/images/favicon2.jpg"><link rel="canonical" href="https://aquarius-baby.github.io/categories/react/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-10-07 17:43:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div id="body-wrap"><header class="not-index-bg" id="page-header" style="background-image: url(/images/background.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Aquarius-Baby</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">react</h1></div></header><main class="layout" id="content-inner"><div class="recent-posts category_ui" id="recent-posts">  <div class="recent-post-item"><div class="post_cover left_radius"><a href="/reactNote/14.ajax%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/" title="14.ajax实现路由跳转">     <img class="post_bg" src="/images/cat.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="14.ajax实现路由跳转"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/14.ajax%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/" title="14.ajax实现路由跳转">14.ajax实现路由跳转</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:15.000Z" title="发表于 2020-02-01 14:15:15">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">1.引入组件
+import &#123; BrowserRouter as Router, Route, Link ,Redirect, withRouter&#125; from &#39;react-router-dom&#39;
+2.定义一个flag
+this.state &#x3D; &#123;                     redirtUrlFlag: false           &#125;
+3.render里面判断是否需要跳转
+if (this.state.redirtUrlFlag) &#123;    return &lt;Redirect to&#x3D;&#123;&#123; pathame: &quot;&#x2F;&quot; &#125;&#125; &#x2F;&gt;&#125;  
+4.通过js改变redirtUrlFlag的值
+this.setState(&#123;    redirtUrlFlag: true&#125;)
+登陆成功后，跳转页面
+loginSubmit &#x3D; e &#x3D;&gt; &#123;     ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/reactNote/13.%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E3%80%81get%E4%BC%A0%E5%80%BC/" title="13.动态路由、get传值">     <img class="post_bg" src="/images/picture1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13.动态路由、get传值"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/13.%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E3%80%81get%E4%BC%A0%E5%80%BC/" title="13.动态路由、get传值">13.动态路由、get传值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:14.000Z" title="发表于 2020-02-01 14:15:14">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">纯代码
+import React, &#123; Component &#125; from &#39;react&#39;;import &#123; BrowserRouter as Router, Route, Link &#125; from &#39;react-router-dom&#39;import News from &#39;.&#x2F;News&#39;import Content from &#39;.&#x2F;Content&#39;import Product from &#39;.&#x2F;Product&#39;import ProductContent from &#39;.&#x2F;ProductContent&#39;class App extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;        &#125;    &#125;    &#x2F;**     * 动态路由传 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/reactNote/12.route%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" title="12.route路由配置">     <img class="post_bg" src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="12.route路由配置"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/12.route%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE/" title="12.route路由配置">12.route路由配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:12.000Z" title="发表于 2020-02-01 14:15:12">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">纯代码
+import React, &#123; Component &#125; from &#39;react&#39;;import &#123; BrowserRouter as Router, Route, Link &#125; from &#39;react-router-dom&#39;import Home from &#39;.&#x2F;Home&#39;import News from &#39;.&#x2F;News&#39;class App extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;        &#125;    &#125;    render() &#123;        return (            &#x2F;&#x2F; Link 一般用于页面跳转、路由切换            &lt;Router&gt;                &lt;div&gt;  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/reactNote/11.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="11.生命周期">     <img class="post_bg" src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="11.生命周期"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/11.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="11.生命周期">11.生命周期</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:11.000Z" title="发表于 2020-02-01 14:15:11">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">纯代码
+import React, &#123; Component &#125; from &#39;react&#39;;import axios from &#39;axios&#39;class Lifecycle extends Component &#123;    constructor(props) &#123;        console.log(&quot;01 构造函数&quot;)        super(props);        this.state &#x3D; &#123;            title: &#39;我是Footer state里的title～～～～&#39;,            list: []        &#125;    &#125;    getData &#x3D; () &#x3D;&gt; &#123;        var url &#x3D; &#39;http:&#x2F;&#x2F;www.phonegap100.com&#x2F;appapi.php?a&#x3D;getPortalList&am ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/reactNote/10.%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8F%82%E6%95%B0%E7%BA%A6%E6%9D%9F/" title="10.父子组件之间的参数约束">     <img class="post_bg" src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="10.父子组件之间的参数约束"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/10.%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8F%82%E6%95%B0%E7%BA%A6%E6%9D%9F/" title="10.父子组件之间的参数约束">10.父子组件之间的参数约束</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:10.000Z" title="发表于 2020-02-01 14:15:10">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">纯代码
+import React, &#123; Component &#125; from &#39;react&#39;;import PropTypes from &#39;prop-types&#39;class Header extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;            msg: &#39;我是Header state里的msg～～～～&#39;,        &#125;    &#125;    render() &#123;        &#x2F;**         * defaultProps         *          *&#x2F;        return (&lt;div&gt;            &#123;this.props.title&#125;-----&#123;this.props.num&#125;            &lt;br ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/reactNote/9.%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/" title="9.父子组件之间参数的传递">     <img class="post_bg" src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="9.父子组件之间参数的传递"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/9.%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/" title="9.父子组件之间参数的传递">9.父子组件之间参数的传递</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:09.000Z" title="发表于 2020-02-01 14:15:09">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">文件1
+import React, &#123; Component &#125; from &#39;react&#39;;import Header from &#39;.&#x2F;Header&#39;import Footer from &#39;.&#x2F;Footer&#39;class News extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;            msg: &#39;我是state里的msg～～～～&#39;,            title: &#39;新闻标题&#39;        &#125;    &#125;    run &#x3D; () &#x3D;&gt; &#123;        alert(&quot;News 的run 方法&quot;)    &#125;    getData &#x3D; () &#x3D;&gt; &#123;        aler ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/reactNote/8.%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E7%BB%84%E4%BB%B6/" title="8.本地缓存提取公共组件">     <img class="post_bg" src="/images/cat.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="8.本地缓存提取公共组件"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/8.%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E7%BB%84%E4%BB%B6/" title="8.本地缓存提取公共组件">8.本地缓存提取公共组件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:08.000Z" title="发表于 2020-02-01 14:15:08">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">具体实现如下
+var storage &#x3D; &#123;    set(key, value) &#123;        localStorage.setItem(key, JSON.stringify(value))    &#125;,    get(key) &#123;        return JSON.parse(localStorage.getItem(key))    &#125;,    remove(key) &#123;        localStorage.removeItem(key)    &#125;&#125;export default storage;
+使用
+import storage from &#39;..&#x2F;module&#x2F;storage&#39;storage.set(&quot;todoList&quot;, tempList);
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/reactNote/7.todoList%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8F%8A%E6%95%B0%E6%8D%AE%E7%BC%93%E5%AD%98%E5%AE%9E%E7%8E%B0/" title="7.todoList的实现及数据缓存实现">     <img class="post_bg" src="/images/picture1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="7.todoList的实现及数据缓存实现"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/7.todoList%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8F%8A%E6%95%B0%E6%8D%AE%E7%BC%93%E5%AD%98%E5%AE%9E%E7%8E%B0/" title="7.todoList的实现及数据缓存实现">7.todoList的实现及数据缓存实现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:07.000Z" title="发表于 2020-02-01 14:15:07">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">具体实现
+import React, &#123; Component &#125; from &#39;react&#39;;import &#123; Checkbox &#125; from &#39;antd&#39;;class TodoList extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;            list: [                            ]        &#125;;    &#125;    addData &#x3D; () &#x3D;&gt; &#123;        var tempList &#x3D; this.state.list;        tempList.push(            &#123;                title: this.refs.title.value,                checked: ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/reactNote/6.%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%80%BC/" title="6.表单传数值">     <img class="post_bg" src="/images/cat.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="6.表单传数值"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/6.%E8%A1%A8%E5%8D%95%E4%BC%A0%E5%80%BC/" title="6.表单传数值">6.表单传数值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:06.000Z" title="发表于 2020-02-01 14:15:06">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">具体实现
+import React, &#123; Component &#125; from &#39;react&#39;;&#x2F;&#x2F; 数据绑定 事件class ReactForm extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;            msg: &#39;reactForm&#39;,            name: &#39;&#39;,            sex: &#39;1&#39;,            city: &#39;江苏&#39;,            citys: [                &#39;北京&#39;, &#39;上海&#39;, &#39;江苏&#39;            ],            hobby: [                &#123;                    &#39;title&#39;: ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/reactNote/5.%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" title="5.双向数据绑定">     <img class="post_bg" src="/images/picture1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="5.双向数据绑定"></a></div><div class="recent-post-info"><a class="article-title" href="/reactNote/5.%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/" title="5.双向数据绑定">5.双向数据绑定</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-02-01T06:15:05.000Z" title="发表于 2020-02-01 14:15:05">2020-02-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/react/">react</a></span></div><div class="content">具体实现
+import React, &#123; Component &#125; from &#39;react&#39;;import &#39;..&#x2F;assets&#x2F;test.less&#39;class TodoList extends Component &#123;    constructor(props) &#123;        super(props);        this.state &#x3D; &#123;            username: &#39;123&#39;        &#125;    &#125;    inputChange &#x3D; (e) &#x3D;&gt; &#123;        this.setState(&#123;            username: e.target.value        &#125;)    &#125;    setName &#x3D; () &#x3D;&gt; &#123;        this.setState(&#123;           ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/categories/react/page/2/">2</a><a class="extend next" rel="next" href="/categories/react/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Aquarius-Baby</div><div class="author-info__description">白茶清欢无别事</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo"><img src="/images/ring-love.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="初始化hexo"/></a><div class="content"><a class="title" href="/%E5%88%9D%E5%A7%8B%E5%8C%96hexo/" title="初始化hexo">初始化hexo</a><time datetime="2021-10-07T08:12:48.000Z" title="发表于 2021-10-07 16:12:48">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%A4%E8%82%A4/" title="护肤"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="护肤"/></a><div class="content"><a class="title" href="/%E6%8A%A4%E8%82%A4/" title="护肤">护肤</a><time datetime="2021-10-07T07:57:57.000Z" title="发表于 2021-10-07 15:57:57">2021-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题"><img src="/images/flower.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="区间问题"/></a><div class="content"><a class="title" href="/algorithm/%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98/" title="区间问题">区间问题</a><time datetime="2021-04-23T06:34:46.000Z" title="发表于 2021-04-23 14:34:46">2021-04-23</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/react/"><span class="card-category-list-name">react</span><span class="card-category-list-count">14</span></a></li><li class="card-category-list-item parent"><a class="card-category-list-link" href="/categories/%E5%88%86%E7%B1%BB1/"><span class="card-category-list-name">分类1</span><span class="card-category-list-count">3</span><i class="fas fa-caret-left expand"></i></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/"><span class="card-category-list-name">分类2</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/"><span class="card-category-list-name">工作记录</span><span class="card-category-list-count">3</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%AE%A1%E5%88%92/" style="font-size: 1.1em; color: rgb(152, 5, 58)">计划</a><a href="/tags/hexo/" style="font-size: 1.5em; color: rgb(131, 117, 140)">hexo</a><a href="/tags/%E6%A0%87%E7%AD%BE1/" style="font-size: 1.5em; color: rgb(91, 196, 154)">标签1</a><a href="/tags/%E6%A0%87%E7%AD%BE2/" style="font-size: 1.5em; color: rgb(175, 126, 80)">标签2</a><a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.3em; color: rgb(156, 144, 156)">链表</a><a href="/tags/%E6%A0%91/" style="font-size: 1.3em; color: rgb(94, 62, 78)">树</a><a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" style="font-size: 1.3em; color: rgb(71, 19, 149)">深度优先搜索</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">二月 2020</span><span class="card-archive-list-count">31</span></a></li></ul></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Aquarius-Baby</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div></div></body></html>
